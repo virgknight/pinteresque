@@ -10,10 +10,9 @@ class SessionsController < ApplicationController
 
         if @user
             login!(@user)
-            redirect_to users_url
+            render "api/users/show"
         else
-            flash.now[:errors] = ['Invalid email or password']
-            render :new
+            render json: ["Nice try pal"], status: 401 #VKNOTE: def change this to whatever Pinterest actually says lol
         end
     end
 
