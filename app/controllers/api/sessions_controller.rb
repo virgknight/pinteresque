@@ -1,7 +1,4 @@
 class SessionsController < ApplicationController
-    def new
-    end
-
     def create
         @user = User.find_by_credentials(
             params[:user][:email],
@@ -18,6 +15,6 @@ class SessionsController < ApplicationController
 
     def destroy
         logout! if logged_in?
-        redirect_to new_session_url
+        render json: { } #VKNOTE: no data really needs to be sent to render logged out page... right?
     end
 end
