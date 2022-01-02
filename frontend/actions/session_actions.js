@@ -19,13 +19,13 @@ export const receiveErrors = errors => ({
 });
 
 export const login = (user) => (dispatch) => {
-    return ApiSessionUtil.signin(user).then(
+    return ApiSessionUtil.login(user).then(
         (user) => dispatch(receiveCurrentUser(user)),
         (errors) => dispatch(receiveErrors(errors)))
 };
 
 export const logout = () => (dispatch) => {
-    return ApiSessionUtil.signout().then(() => dispatch(logoutCurrentUser()))
+    return ApiSessionUtil.logout().then(() => dispatch(logoutCurrentUser()))
 };
 
 export const signup = (user) => (dispatch) => {
