@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-class SessionForm extends React.Component {
+class SignupForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: "",
-            password: ""
+            email: undefined,
+            password: undefined,
+            age: undefined
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,33 +28,32 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        const buttonText = this.props.formType === "signup" ? "Continue" : "Log in";
-        let { email, password, age} = this.state;
+        let { email, password, age } = this.state;
         return (
             <div>
                 {this.props.errors.map((error) => (<p>{error}</p>))}
                 <form>
                     <h2>Welcome to Pinterest</h2>
                     <input type="text"
-                        value={email ? email : "Email"}
+                        placeholder="Email"
+                        value={email}
                         onChange={this.handleInput('email')}></input>
                     <br />
                     <input type="password"
-                        value={password ? password : "Create a password"}
+                        placeholder="Password"
+                        value={password}
                         onChange={this.handleInput('password')}></input>
                     <br />
-                    {this.props.formType === "signup" ?
-                        <input type="number"
-                            value={age ? age : "Age"}
-                            onChange={this.handleInput('age')}></input> : {}}
-                    <button onClick={this.handleSubmit}>{buttonText}</button>
+                    <input type="number"
+                        placeholder="Age"
+                        value={age}
+                        onChange={this.handleInput('age')}></input>
+                    <button onClick={this.handleSubmit}>Continue</button>
                 </form>
-                {this.props.formType === "signup" ?
-                    <Link to="/login">Already a member? Log in</Link> :
-                    <Link to="/signup">Not on Pinteresque yet? Sign up</Link>}
+                <Link to="/login">Already a member? Log in</Link>
             </div>
         );
     }
 };
 
-export default SessionForm;
+export default SignupForm;
