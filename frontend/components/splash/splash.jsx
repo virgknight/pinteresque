@@ -14,8 +14,8 @@ class Splash extends React.Component {
     componentDidMount () {
         let i = 0;
         this.interval = setInterval(() => {
-            i ++;
-            this.setState({currentTab: i % 3})
+            i = this.state.currentTab + 1;
+            this.setState({currentTab: (i % 3)})
         }, 5000);
     }
 
