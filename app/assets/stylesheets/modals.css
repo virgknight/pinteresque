@@ -24,7 +24,7 @@
   border-radius: 32px;
   min-height: initial;
   width: 425px;
-  top: 15%;
+  top: 12%;
   margin: 0 auto;
   text-align: center;
   display: flex;
@@ -84,7 +84,6 @@ form input {
 p.error {
   color: red;
   font-weight: lighter;
-  margin: 8px;
 }
 
 div.close-button {
