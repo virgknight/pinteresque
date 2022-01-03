@@ -80,3 +80,9 @@ form input {
   font-size: 16px;
   color: black;
 }
+
+p.error {
+  color: red;
+  font-weight: lighter;
+  margin: 8px;
+}

@@ -14,6 +14,10 @@ class LoginForm extends React.Component {
         this.handleInput = this.handleInput.bind(this);
     }
 
+    componentDidMount() {
+        this.props.clearErrors();
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
@@ -52,7 +56,9 @@ class LoginForm extends React.Component {
                         value={password}
                         onChange={this.handleInput('password')}></input>
                     <br />
-                    {this.props.errors.map((error) => (<p>{error}</p>))} 
+
+                    {this.props.errors.map((error) => (<p className="error">{error}</p>))}
+                     
                     <button className="modal-button" 
                             onClick={this.handleSubmit}>Log in</button>
                     <p><strong>or</strong></p>

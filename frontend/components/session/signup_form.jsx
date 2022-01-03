@@ -14,6 +14,10 @@ class SignupForm extends React.Component {
         this.handleInput = this.handleInput.bind(this);
     }
 
+    componentDidMount () {
+        this.props.clearErrors();
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         let {email, age} = this.state;
@@ -34,12 +38,12 @@ class SignupForm extends React.Component {
         return (
             <div className="modal">
                 <div className="modal-content">
-                {this.props.errors.map((error) => (<p>{error}</p>))}
                 <form>
                     <img src={window.round_logo} width="50" height="50" />
                     <h2>Welcome to Pinteresque</h2>
                     <p>Get tons of new ideas!</p>
                     <br />
+                    {this.props.errors.map((error) => (<p className="error">{error}</p>))}
                     <input type="text"
                         placeholder="Email"
                         value={email}

@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
             login!(@user)
             render "api/users/show"
         else
-            render json: ["Nice try pal"], status: 401 #VKNOTE: def change this to whatever Pinterest actually says lol
+            render json: ["Hmm, it doesn't look like any accounts match these credentials."], status: 401
         end
     end
 
