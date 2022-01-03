@@ -23,7 +23,7 @@
   background-color: white;
   border-radius: 32px;
   min-height: initial;
-  width: 484px;
+  width: 425px;
   top: 15%;
   margin: 0 auto;
   text-align: center;
@@ -31,7 +31,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-shadow: 0 0 4px white;
   padding: 10px;
 }
 
@@ -79,5 +78,5 @@ form input {
   margin: 10px 0px 10px 0px;
   padding: 7px 10px 7px 10px;
   font-size: 16px;
-  color: lightgray;
+  color: black;
 }

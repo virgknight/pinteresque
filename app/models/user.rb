@@ -16,7 +16,7 @@
 #
 class User < ApplicationRecord
     validates :email, :username, :session_token, presence: true, uniqueness: true
-    validates :password_digest, :first_name, :last_name, presence: true
+    validates :password_digest, presence: true
     validates :password, length: {minimum: 6}, allow_nil: true
     validates :age, presence: true, numericality: { greater_than_or_equal_to: 13 } 
     # VKNOTE: later may want to add inclusion validation for pronouns

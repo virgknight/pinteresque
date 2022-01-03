@@ -5,8 +5,8 @@ class LoginForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: undefined,
-            password: undefined
+            email: "",
+            password: ""
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,7 +39,6 @@ class LoginForm extends React.Component {
         return (
             <div className="modal">
                 <div className="modal-content">
-                {this.props.errors.map((error) => (<p>{error}</p>))} 
                 <form>
                     <img src={window.round_logo} width="50" height="50" />
                     <h2>Welcome to Pinteresque</h2>
@@ -53,6 +52,7 @@ class LoginForm extends React.Component {
                         value={password}
                         onChange={this.handleInput('password')}></input>
                     <br />
+                    {this.props.errors.map((error) => (<p>{error}</p>))} 
                     <button className="modal-button" 
                             onClick={this.handleSubmit}>Log in</button>
                     <p><strong>or</strong></p>

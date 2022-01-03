@@ -5,9 +5,9 @@ class SignupForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: undefined,
-            password: undefined,
-            age: undefined
+            email: "",
+            password: "",
+            age: ""
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,7 +16,9 @@ class SignupForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const user = Object.assign({}, this.state);
+        let {email, age} = this.state;
+        const newUserName = email.slice(0, email.indexOf('@'));
+        const user = Object.assign({}, this.state, { age: parseInt(age), username: newUserName });
         this.props.processForm(user).then(() =>
             this.props.history.push("/"));
     }
