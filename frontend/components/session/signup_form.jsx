@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CloseIcon from '@mui/icons-material/Close';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -38,6 +39,7 @@ class SignupForm extends React.Component {
         return (
             <div className="modal">
                 <div className="modal-content">
+                <div onClick={() => this.props.history.push("/")} className="close-button"><CloseIcon /></div>
                 <form>
                     <img src={window.round_logo} width="50" height="50" />
                     <h2>Welcome to Pinteresque</h2>

@@ -9,6 +9,47 @@
     padding: 10px;
 }
 
-#splash-content h1.splash-theme-title {
+#splash-content h1.cadetblue {
+    color: cadetblue;
+}
+#splash-content h1.goldenrod {
     color: goldenrod;
+}
+#splash-content h1.lightcoral {
+    color: lightcoral;
+}
+
+#splash-content h1.sliding {
+    animation: slide-up 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        line-height: 200px;
+    }
+    20% {
+        opacity: 1;
+        line-height: 50px;
+    }
+    80% {
+        opacity: 1;
+        line-height: 50px;
+    }
+    100% {
+        opacity: 0;
+        line-height: 0px;
+    }
+}
+
+div.splash-theme-buttons {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 200px;
 }

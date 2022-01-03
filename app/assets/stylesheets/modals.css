@@ -14,7 +14,7 @@
   font-family: sans-serif;
   font-weight: bold;
   font-size: 12px;
-  padding: 8px;
+  padding: 12px;
 }
 
 .modal-content {
@@ -31,7 +31,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
 }
 
 .modal-button {
@@ -85,4 +85,11 @@ p.error {
   color: red;
   font-weight: lighter;
   margin: 8px;
+}
+
+div.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
 }
