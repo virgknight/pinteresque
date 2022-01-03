@@ -31,9 +31,9 @@ class Splash extends React.Component {
         const selectedIdea = this.ideas[this.state.currentTab];
         const selectedClasses = selectedIdea.color + " sliding";
 
-        const circleButtons = [0,1,2].map((circleNumber) => (
-            <div onClick={this.switchIdea(circleNumber)}>
-                <CircleIcon sx={{ fontSize: 10, color: (this.state.currentTab === circleNumber ? selectedIdea.color : "lightgray") }} />
+        const circleButtons = [0, 1, 2].map((circleNum) => (
+            <div key={`circleicon-${circleNum}`} onClick={this.switchIdea(circleNum)}>
+                <CircleIcon sx={{ fontSize: 10, color: (this.state.currentTab === circleNum ? selectedIdea.color : "lightgray") }} />
             </div>
         ));
 

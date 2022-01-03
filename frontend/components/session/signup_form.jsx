@@ -24,6 +24,7 @@ class SignupForm extends React.Component {
         let {email, age} = this.state;
         const newUserName = email.slice(0, email.indexOf('@'));
         const user = Object.assign({}, this.state, { age: parseInt(age), username: newUserName });
+        debugger;
         this.props.processForm(user).then(() =>
             this.props.history.push("/"));
     }
@@ -45,7 +46,7 @@ class SignupForm extends React.Component {
                     <h2>Welcome to Pinteresque</h2>
                     <p>Get tons of new ideas!</p>
                     <br />
-                    {this.props.errors.map((error) => (<p className="error">{error}</p>))}
+                    {this.props.errors.map((error, i) => (<p key={`autherror-${i}`} className="error">{error}</p>))}
                     <input type="text"
                         placeholder="Email"
                         value={email}
