@@ -1,0 +1,14 @@
+#splash-content {
+    margin: 0 auto;
+}
+
+#splash-content h1 {
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    padding: 10px;
+}
+
+#splash-content h1.splash-theme-title {
+    color: goldenrod;
+}

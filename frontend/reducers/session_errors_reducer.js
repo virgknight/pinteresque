@@ -4,7 +4,6 @@ const defaultState = [];
 
 const sessionErrorsReducer = (state = defaultState, action) => {
     Object.freeze(state);
-
     switch(action.type) {
         case RECEIVE_SESSION_ERRORS:
             return action.errors;

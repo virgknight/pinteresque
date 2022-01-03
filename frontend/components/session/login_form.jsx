@@ -41,7 +41,8 @@ class LoginForm extends React.Component {
                 <div className="modal-content">
                 {this.props.errors.map((error) => (<p>{error}</p>))} 
                 <form>
-                    <h2>Welcome to Pinterest</h2>
+                    <img src={window.round_logo} width="50" height="50" />
+                    <h2>Welcome to Pinteresque</h2>
                     <input type="text"
                         placeholder="Email"
                         value={email}
@@ -54,9 +55,7 @@ class LoginForm extends React.Component {
                     <br />
                     <button className="modal-button" 
                             onClick={this.handleSubmit}>Log in</button>
-                    <br />
-                    <p>or</p>
-                    <br />
+                    <p><strong>or</strong></p>
                     <button className="modal-button demo-user-button" 
                             onClick={this.handleDemo}>Log in as Demo User</button>
                 </form>

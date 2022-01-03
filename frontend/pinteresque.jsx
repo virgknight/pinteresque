@@ -6,15 +6,17 @@ import Root from "./components/root";
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
 
-    let preloadedState = undefined;
+    let store;
     if (window.currentUser) {
-        preloadedState = {
+        const preloadedState = {
             entities: { users: { [window.currentUser.id]: window.currentUser } },
             session: { id: window.currentUser.id }
         };
+        store = configureStore(preloadedState);
         delete window.currentUser;
+    } else {
+        store = configureStore();
     }
-    const store = configureStore(preloadedState);
 
     // VKNOTE: DEVELOPMENT CODE
     window.getState = store.getState;
