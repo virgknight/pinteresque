@@ -6,10 +6,6 @@ import loginFormContainer from "./session/login_form_container";
 import signupFormContainer from "./session/signup_form_container";
 import SplashContainer from "./splash/splash_container";
 
-const tempComponent = () => {
-    return (<p>You're logged in!</p>);
-};
-
 const App = () => (
     <div>
         <NavBarLinksContainer />
@@ -18,7 +14,6 @@ const App = () => (
         <AuthRoute path="/login" component={loginFormContainer} />
         <AuthRoute path="/signup" component={signupFormContainer} />
 
-        <ProtectedRoute exact path="/" component={tempComponent} />
     </div>
 );
 
