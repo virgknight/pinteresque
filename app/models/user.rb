@@ -21,6 +21,7 @@ class User < ApplicationRecord
     validates :age, presence: true, numericality: { greater_than_or_equal_to: 13 } 
     # VKNOTE: later may want to add inclusion validation for pronouns
     after_initialize :ensure_session_token
+    after_validation :ensure_display_name
 
     attr_reader :password
 
@@ -54,5 +55,14 @@ class User < ApplicationRecord
         self.session_token = self.generate_session_token
         self.save!
         self.session_token
+    end
+
+    def ensure_display_name
+        if self.first_name
+            self.display_name = self.first_name
+            self.display_name += " " + self.last_name if self.last_name
+        else
+            self.display_name = self.username
+        end
     end
 end

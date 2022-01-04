@@ -34,7 +34,7 @@ class NavBarLinks extends React.Component {
                     <Link to={`/${currentUser.id}/_saved`}>
                         <svg height="20" width="20">
                             <circle cx="10" cy="10" r="8" fill="#efefef" />
-                            <text x="33%" y="50%" textAnchor="middle" fill="#111" fontSize="12px">{currentUser.username[0].toUpperCase()}</text>
+                            <text x="33%" y="50%" textAnchor="middle" fill="#111" fontSize="12px">{currentUser.display_name[0].toUpperCase()}</text>
                         </svg>
                     </Link>
                 </div>

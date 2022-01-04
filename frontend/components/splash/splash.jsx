@@ -38,7 +38,7 @@ class Splash extends React.Component {
             </div>
         ));
 
-        const splashy = (<main id="splash-content">
+        return (<main id="splash-content">
             <h1>Get your next</h1>
             <h1 className={selectedClasses}>{selectedIdea.text}</h1>
             <div className="splash-theme-buttons">
@@ -46,8 +46,6 @@ class Splash extends React.Component {
             </div>
             <SplashImages0 />
         </main>);
-
-        return this.props.currentUser ? null : splashy;
     }
 }
 
