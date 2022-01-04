@@ -20,6 +20,9 @@
 }
 
 #splash-content h1.sliding {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
     animation: slide-up 5s;
     animation-iteration-count: infinite;
 }
@@ -45,11 +48,12 @@
 
 div.splash-theme-buttons {
     position: absolute;
+    z-index: 1;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 200px;
+    width: 100px;
 }

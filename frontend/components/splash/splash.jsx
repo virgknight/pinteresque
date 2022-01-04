@@ -1,5 +1,6 @@
 import React from "react";
 import CircleIcon from '@mui/icons-material/Circle';
+import SplashImages0 from "./spash_images_0";
 
 class Splash extends React.Component {
     constructor (props) {
@@ -43,6 +44,7 @@ class Splash extends React.Component {
             <div className="splash-theme-buttons">
                 {circleButtons}
             </div>
+            <SplashImages0 />
         </main>);
 
         return this.props.currentUser ? null : splashy;

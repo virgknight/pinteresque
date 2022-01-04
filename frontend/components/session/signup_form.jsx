@@ -75,19 +75,22 @@ class SignupForm extends React.Component {
                     <input type="text"
                         placeholder="Email"
                         value={email}
-                        onChange={this.handleInput('email')}></input>
+                        onChange={this.handleInput('email')}
+                        className={errors.email ? "errored-field" : ""}></input>
                     {errors.email}
                     <br />
                     <input type="password"
                         placeholder="Password"
                         value={password}
-                        onChange={this.handleInput('password')}></input>
+                        onChange={this.handleInput('password')}
+                        className={errors.password ? "errored-field" : ""}></input>
                     {errors.password}
                     <br />
                     <input type="number"
                         placeholder="Age"
                         value={age}
-                        onChange={this.handleInput('age')}></input>
+                        onChange={this.handleInput('age')}
+                        className={errors.age ? "errored-field" : ""}></input>
                     {errors.age}
                     <button className="modal-button"
                             onClick={this.handleSubmit}>Continue</button>

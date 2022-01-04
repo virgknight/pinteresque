@@ -92,3 +92,7 @@ div.close-button {
   right: 20px;
   cursor: pointer;
 }
+
+input.errored-field {
+  border: 1px solid red;
+}
