@@ -22,8 +22,12 @@ class NavBarLinks extends React.Component {
                 </div>
                 <div className="notification-bell nav-icon"><NotificationsIcon sx={{ fontSize: 30, color: "gray" }}/></div>
                 <div className="inbox-icon nav-icon"><SmsIcon sx={{ fontSize: 30, color: "gray" }} /></div>
-                <div className="profile-icon nav-icon">{currentUser ? currentUser.username[0].toUpperCase() : ""}</div>
-                <div className="menu-icon nav-icon"><KeyboardArrowDownIcon sx={{ fontSize: 30, color: "gray" }} /></div>
+                <div className="profile-icon nav-icon">
+                    {currentUser ? currentUser.username[0].toUpperCase() : ""}
+                </div>
+                <div className="menu-icon nav-icon" onClick={logout}>
+                    <KeyboardArrowDownIcon sx={{ fontSize: 30, color: "gray" }} />
+                </div>
             </nav>
         );
 
