@@ -5,7 +5,7 @@ import NavBarLinksContainer from "./navbar/navbar_links_container";
 import loginFormContainer from "./session/login_form_container";
 import signupFormContainer from "./session/signup_form_container";
 import homePageContainer from "./home/home_page_container";
-// import discoverFeedContainer from "./discover_feed/discover_feed_container";
+import discoverFeedContainer from "./discover_feed/discover_feed_container";
 
 const App = () => (
     <div>
@@ -17,7 +17,7 @@ const App = () => (
         <AuthRoute path="/signup" component={signupFormContainer} />
 
         {/* logged in routes */}
-        {/* <Route exact path="/" component={discoverFeedContainer} /> */}
+        <Route exact path="/" component={discoverFeedContainer} />
 
     </div>
 );
