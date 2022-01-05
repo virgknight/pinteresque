@@ -7,13 +7,20 @@ class DiscoverGrid extends React.Component {
         this.state = {
             displayedPins: [],
             numImagesDisplayed: 0,
-            allImagesShown: false // relevant to boards only infinite scroll will not toggle this)
+            allImagesShown: false // only toggled when props.infinite = false (aka for non-infinite scrolling boards)
         };
 
         this.initialDisplayIncomplete = true;
 
         this.handleScroll = this.handleScroll.bind(this);
         this.getNumOfImagesToAdd = this.getNumOfImagesToAdd.bind(this);
+    }
+
+    componentDidUpdate () {
+        if (this.initialDisplayIncomplete) {
+            this.createInitialDisplay();
+            this.initialDisplayIncomplete = false;
+        }
     }
 
     createInitialDisplay() {
@@ -32,7 +39,7 @@ class DiscoverGrid extends React.Component {
 
     getNumOfImagesToAdd () {
         // default: add 10 images (increase?)
-        let numImages = 10;
+        let numImages = 15;
 
         // for non-infinite scrolling boards, check that this doesn't put us over the number of available images
         if (!this.props.infinite && 
@@ -60,6 +67,8 @@ class DiscoverGrid extends React.Component {
         const {numImagesDisplayed} = this.state;
         const startIndex = numImagesDisplayed % pins.length;
 
+        console.log(startIndex);
+
         let newPins;
         // conditional structure accounts for infinite scroll
         // once we've already shown all the pins, just repeat them again
@@ -80,15 +89,16 @@ class DiscoverGrid extends React.Component {
     render () {
         if (this.props.pins.length === 0) return null;
 
-        if (this.initialDisplayIncomplete) {
-            this.createInitialDisplay();
-            this.initialDisplayIncomplete = false;
-        }
-
         return (
             <main className="pin-index">
-                {this.state.displayedPins.map((pin, i) => (
-                    <img key={`img-${i}`} src={pin.photoUrl} />
+                {[0,1,2,3,4].map((i) => (
+                    <div key={`col-${i}`} className={`gridcol col${i}`}>
+                        {this.state.displayedPins
+                            .filter((pin, j) => (j % 5 === i))
+                            .map((pin, j) => (
+                                <img key={`img-${j}`} src={pin.photoUrl} />
+                            ))}
+                    </div>
                 ))}
             </main>
         );
