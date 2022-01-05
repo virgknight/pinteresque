@@ -38,7 +38,7 @@ class DiscoverGrid extends React.Component {
     }
 
     getNumOfImagesToAdd () {
-        // default: add 10 images (increase?)
+        // default: add 15 images
         let numImages = 15;
 
         // for non-infinite scrolling boards, check that this doesn't put us over the number of available images

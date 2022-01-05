@@ -10,8 +10,8 @@ class DiscoverFeed extends React.Component {
     render () {
         const { currentUser, pins } = this.props;
 
-        const shuffledPins = shufflePinObject(pins);
-        const infinite = true;
+        const shuffledPins = shufflePinObject(pins).slice(0, 7);
+        const infinite = false;
 
         return (currentUser ?
             <DiscoverGridContainer pins={shuffledPins} infinite={infinite} />
