@@ -67,8 +67,6 @@ class DiscoverGrid extends React.Component {
         const {numImagesDisplayed} = this.state;
         const startIndex = numImagesDisplayed % pins.length;
 
-        console.log(startIndex);
-
         let newPins;
         // conditional structure accounts for infinite scroll
         // once we've already shown all the pins, just repeat them again

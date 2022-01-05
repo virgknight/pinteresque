@@ -5,7 +5,7 @@ import { requestAllPins } from '../../actions/pins_actions';
 
 const mSTP = ({ session, entities: { users, pins } }) => ({
     currentUser: users[session.currentUserId],
-    pins
+    pins: Object.values(pins)
 });
 
 const mDTP = dispatch => ({
