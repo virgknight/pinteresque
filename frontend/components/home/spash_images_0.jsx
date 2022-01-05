@@ -3,8 +3,6 @@ import React from "react";
 const SplashImages0 = ({pins}) => {
 
     if (Object.keys(pins).length === 0) {
-        // console.log("VK error: nothing is getting sent to the images component :(")
-        // console.log(pins);
         return null;
     }
 

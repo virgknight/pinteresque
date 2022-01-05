@@ -1,10 +1,13 @@
 main.pin-index {
-    display: flex;
-    flex-direction: column;
-
+    width: 90vw;
+    margin: 0 auto;
+    column-count: 5;
+    column-width: auto;
+    column-gap: 5px;
 }
 
 main.pin-index img {
-    width: 18vw;
-    margin: 5px;
+    max-width: 15vw;
+    padding: 10px;
+    border-radius: 24px;
 }

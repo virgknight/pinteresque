@@ -1,8 +1,14 @@
 import { connect } from "react-redux";
 import DiscoverFeed from "./discover_feed";
+import { requestAllPins } from "../../actions/pins_actions"
 
-const mSTP = ({ session, entities: { users } }) => ({
-    currentUser: users[session.currentUserId]
+const mSTP = ({ session, entities: { users, pins } }) => ({
+    currentUser: users[session.currentUserId],
+    pins
 });
 
-export default connect(mSTP)(DiscoverFeed);
+const mDTP = dispatch => ({
+    requestAllPins: () => dispatch(requestAllPins())
+});
+
+export default connect(mSTP, mDTP)(DiscoverFeed);

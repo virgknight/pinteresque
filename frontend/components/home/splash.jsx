@@ -23,8 +23,6 @@ class Splash extends React.Component {
     componentDidMount () {
         this.props.requestAllPins();
 
-        console.log(this.props.pins);
-
         let i = 0;
         this.interval = setInterval(() => {
             i = this.state.currentTab + 1;
