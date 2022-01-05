@@ -27,7 +27,7 @@ pin3 = Pin.create!(owner_id: demo_user.id, title: "Tacos sabrosos");
 photo3 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/tacos.jpeg");
 pin3.photo.attach(io: photo3, filename: "tacos.jpeg");
 
-pin4 = Pin.create!(owner_id: demo_user.id, title: "New York Slice");
+pin4 = Pin.create!(owner_id: demo_user.id, title: "New York Slice", alt_text: "Michael Scott's favorite");
 photo4 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/pizza.jpeg");
 pin4.photo.attach(io: photo4, filename: "pizza.jpeg");
 
@@ -35,7 +35,7 @@ pin5 = Pin.create!(owner_id: demo_user.id, title: "12 Fancy Cocktails to try at 
 photo5 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/cocktail.jpeg");
 pin5.photo.attach(io: photo5, filename: "cocktail.jpeg");
 
-pin6 = Pin.create!(owner_id: demo_user.id, title: "Yum :D");
+pin6 = Pin.create!(owner_id: demo_user.id, title: "sausage dish");
 photo6 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/sausage-dish.jpeg");
 pin6.photo.attach(io: photo6, filename: "sausage-dish.jpeg");
 
@@ -44,11 +44,11 @@ photo7 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/shawarma
 pin7.photo.attach(io: photo7, filename: "shawarma.jpeg");
 
 # Splash 3: party decor
-pin8 = Pin.create!(owner_id: demo_user.id, title: "Oooo la la");
+pin8 = Pin.create!(owner_id: demo_user.id, title: "Oooo la la", alt_text: "la vie est belle");
 photo8 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/pink-french-food.jpeg");
 pin8.photo.attach(io: photo8, filename: "pink-french-food.jpeg");
 
-pin9 = Pin.create!(owner_id: demo_user.id, title: "10 photos to inspire your next 90's themed party");
+pin9 = Pin.create!(owner_id: demo_user.id, title: "10 photos to inspire your next 90's themed party", alt_text: "check it out on Buzzfeed");
 photo9 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/disco-balls.jpeg");
 pin9.photo.attach(io: photo9, filename: "disco-balls.jpeg");
 
@@ -81,7 +81,7 @@ pin16 = Pin.create!(owner_id: demo_user.id, title: "Ascension");
 photo16 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/silhouette.jpeg");
 pin16.photo.attach(io: photo16, filename: "silhouette.jpeg");
 
-pin17 = Pin.create!(owner_id: demo_user.id, title: "swimming in the void");
+pin17 = Pin.create!(owner_id: demo_user.id, title: "in the void");
 photo17 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/swimmer.jpeg");
 pin17.photo.attach(io: photo17, filename: "swimmer.jpeg");
 

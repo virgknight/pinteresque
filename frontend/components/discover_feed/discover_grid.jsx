@@ -1,4 +1,5 @@
 import React from "react";
+import GridIndexItem from "./grid_index_item";
 
 class DiscoverGrid extends React.Component {
     constructor(props) {
@@ -94,7 +95,7 @@ class DiscoverGrid extends React.Component {
                         {this.state.displayedPins
                             .filter((pin, j) => (j % 5 === i))
                             .map((pin, j) => (
-                                <img key={`img-${j}`} src={pin.photoUrl} />
+                                <GridIndexItem key={`img-${j}`} pin={pin} />
                             ))}
                     </div>
                 ))}
