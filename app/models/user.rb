@@ -25,6 +25,11 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     after_validation :ensure_display_name
 
+    has_many :pins,
+    dependent: :destroy,
+    foreign_key: :owner_id,
+    class_name: :Pin
+
     attr_reader :password
 
     def self.find_by_credentials(email, password)
