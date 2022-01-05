@@ -1,0 +1,10 @@
+main.pin-index {
+    display: flex;
+    flex-direction: column;
+
+}
+
+main.pin-index img {
+    width: 18vw;
+    margin: 5px;
+}

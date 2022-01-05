@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const MenuDropdown = ({ currentUser, logout }) => {
-
     return (
         <div id="menu-dropdown" className="dropdown-content">
             <h6>Currently in</h6>

@@ -3,7 +3,10 @@
     align-items: center;
     justify-content: space-between;
     background-color: white;
-    margin-top: 5px;
+    padding: 10px 0 10px 0;
+    position: sticky; 
+    top: 0;
+    box-shadow: 0 4px 4px -4px lightgray;
 }
 
 .header-elements {

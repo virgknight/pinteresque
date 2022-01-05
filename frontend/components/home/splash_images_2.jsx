@@ -13,7 +13,7 @@ const SplashImages2 = ({ pins }) => {
         <div className="splash-img img7"><img src={pins[9].photoUrl} /></div>
         <div className="splash-img img8"><img src={pins[13].photoUrl} /></div>
         <div className="splash-img img9"><img src={pins[12].photoUrl} /></div>
-        <div className="splash-img img10"><img src={pins[12].photoUrl} /></div>
+        <div className="splash-img img10"><img src={pins[11].photoUrl} /></div>
         <div className="splash-img img11"><img src={pins[13].photoUrl} /></div>
     </div>);
 };

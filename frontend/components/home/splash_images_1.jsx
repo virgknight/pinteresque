@@ -5,8 +5,8 @@ const SplashImages1 = ({ pins }) => {
 
     return (<div className="image-grid">
         <div className="splash-img img1"><img src={pins[16].photoUrl} /></div>
-        <div className="splash-img img2"><img src={pins[15].photoUrl} /></div>
-        <div className="splash-img img3"><img src={pins[18].photoUrl} /></div>
+        <div className="splash-img img2"><img src={pins[18].photoUrl} /></div>
+        <div className="splash-img img3"><img src={pins[15].photoUrl} /></div>
         <div className="splash-img img4"><img src={pins[17].photoUrl} /></div>
         <div className="splash-img img5"><img src={pins[20].photoUrl} /></div>
         <div className="splash-img img6"><img src={pins[16].photoUrl} /></div>
