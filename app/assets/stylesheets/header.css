@@ -54,6 +54,11 @@ nav#header-nav button, div.searchbar {
     padding: 8px 12px 8px 12px;
 }
 
+nav#header-nav button a {
+    font-weight: bolder;
+    font-size: 16px;
+}
+
 nav#header-nav button.red {
     background-color: rgb(230, 0, 35);
 }
@@ -62,6 +67,7 @@ nav#header-nav button.red a {
     color: white;
 }
 
+/* LinkedIn / GitHub links */
 div.professional-links {
     display: flex;
 }
@@ -69,8 +75,11 @@ div.professional-links {
 div.professional-links a {
     margin: 8px;
     padding: 8px;
+    font-weight: bolder;
+    font-size: 16px;
 }
 
+/* Search bar */
 div.searchbar {
     background-color: #efefef;
     border-radius: 24px;
@@ -90,12 +99,14 @@ input.search-input {
     border: none;
     font-size: 16px;
     width: 66vw;
+    margin: 3px 0 3px 0;
 }
 
 input.search-input:focus {
     outline: none;
 }
 
+/* Righthand icons */
 .nav-icon {
     padding: 8px;
     cursor: pointer;

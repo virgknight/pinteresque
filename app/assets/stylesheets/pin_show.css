@@ -5,6 +5,12 @@ button.back-button {
     top: 105px;
     left: 24px;
     cursor: pointer;
+    padding: 14px;
+    border-radius: 30px;
+}
+
+button.back-button:hover {
+    background-color: lightgray;
 }
 
 #pin-show-container {
@@ -30,16 +36,80 @@ button.back-button {
     padding: 25px;
 }
 
+/* links/nav at top of show */
+.pin-show-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ps-nav-icons, .ps-comment-header {
+    display: flex;
+    align-items: center;
+    width: 12vw;
+}
+
+.ps-nav-icons {
+    justify-content: space-evenly;
+}
+
+.ps-nav-icons svg {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.ps-nav-icons svg:hover, #show-more-comments:hover {
+    background-color: lightgray;
+}
+
+/* Title, alt text, user */
 .pin-show-desc > h3 {
-    font-weight: 900px;
+    font-weight: 900;
     font-size: 36px;
 }
 
-.pin-show-desc > p {
+.pin-show-desc p {
     font-weight: lighter;
     font-size: 14px;
 }
 
-.pin-show-desc > * {
-    margin: 16px 0 16px 0;
+.pin-show-desc > *, .pin-show-desc p {
+    margin: 20px 0 20px 0;
+}
+
+/* Comment section */
+#show-more-comments {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0 2px 0 2px;
+    border-radius: 25px;
+}
+
+.hidden {
+    display: none;
+}
+
+.rotate-down {
+    transform: rotate(90deg);
+}
+
+.ps-comment-header > h4 {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.ps-comment-input-container {
+    display: flex;
+    align-items: center;
+}
+
+.comment-input {
+    border-radius: 26px;
+    border: 1px solid lightgray;
+    font-size: 16px;
+    padding: 16px;
+    margin-left: 15px;
+    width: 20vw;
 }

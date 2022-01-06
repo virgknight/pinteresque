@@ -2,8 +2,9 @@ import { connect } from "react-redux";
 import { requestPin } from "../../actions/pins_actions";
 import PinShow from "./pin-show";
 
-const mSTP = ({entities}, ownProps) => ({
-    pin: entities.pins[ownProps.match.params.pinId]
+const mSTP = ({session, entities: {users, pins}}, ownProps) => ({
+    pin: pins[ownProps.match.params.pinId],
+    currentUser: users[session.currentUserId]
 });
 
 const mDTP = dispatch => ({
