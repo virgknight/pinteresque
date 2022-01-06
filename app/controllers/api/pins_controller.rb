@@ -8,6 +8,12 @@ class Api::PinsController < ApplicationController
     end
 
     def create
+        @pin = Pin.new(pin_params)
+        if @pin.save
+            render :show
+        else
+            render json: @user.errors.full_messages, status: 422
+        end
     end
 
     def update

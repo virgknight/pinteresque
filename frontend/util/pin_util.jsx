@@ -12,6 +12,29 @@ export const fetchPin = pinId => (
     })
 );
 
+export const createPin = (pin) => (
+    $.ajax({
+        url: `/api/pins/${pin.id}`,
+        method: "POST",
+        data: { pin }
+    })
+);
+
+export const updatePin = (pin) => (
+    $.ajax({
+        url: `/api/pins/${pin.id}`,
+        method: "PATCH",
+        data: { pin }
+    })
+);
+
+export const deletePin = pinId => (
+    $.ajax({
+        url: `/api/pins/${pinId}`,
+        method: "PATCH"
+    })
+);
+
 // takes in an object containing pin objects (ex. those pulled from state)
 // returns an array of shuffled pin objects
 export const shufflePinObject = pinObj => (

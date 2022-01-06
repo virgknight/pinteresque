@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_PINS, RECEIVE_PIN } from "../actions/pins_actions";
+import { RECEIVE_ALL_PINS, RECEIVE_PIN, REMOVE_PIN } from "../actions/pins_actions";
 
 const defaultState = {};
 
@@ -11,6 +11,8 @@ const PinsReducer = (state = defaultState, action) => {
             return action.pins;
         case RECEIVE_PIN:
             return Object.assign(newState, {[action.pin.id]: action.pin});
+        case REMOVE_PIN:
+            delete newState[action.pinId];
         default:
             return state;
     }
