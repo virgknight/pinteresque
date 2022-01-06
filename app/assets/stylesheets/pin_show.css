@@ -16,19 +16,33 @@ button.back-button:hover {
 #pin-show-container {
     display: block;
     border-radius: 18px;
-    box-shadow: 0 1px 20px 0 lightgray;
     transform: translateX(15vw);
     margin: 20px;
     max-width: 70vw;
+    position: relative;
+}
+
+#pin-show-container:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    border-radius: 18px;
+    box-shadow: 0 1px 20px 0 rgba(0,0,0,0.2);
 }
 
 #pin-show {
     display: flex;
+    align-items: flex-start;
 }
 
 #pin-show > img {
     max-width: 35vw;
     border-radius: 18px 0 0 18px;
+    object-fit: contain;
 }
 
 .pin-show-desc {

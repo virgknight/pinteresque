@@ -126,6 +126,10 @@ input.search-input:focus {
     border-radius: 50%;
 }
 
+.profile-icon:hover {
+    filter: brightness(70%);
+}
+
 /* dropdown menus */
 
 .dropdown-content {

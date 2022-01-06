@@ -70,3 +70,50 @@ p.pin-alt {
     font-weight: lighter;
     font-size: 14px;
 }
+
+/* Omnipresent pin creation button/info button */
+#omnipresent-buttons {
+    position: fixed; 
+    z-index: 2;
+    bottom: 10px;
+    right: 20px;
+}
+
+#omnipresent-buttons button {
+    cursor: pointer;
+    padding: 10px;
+    margin: 4px;
+    border-radius: 30px;
+}
+
+#omnipresent-buttons button.question-button {
+    padding: 12px; /* icons are slightly different sizes, so this accounts for difference */
+}
+
+#omnipresent-buttons button:hover, .omni-display a:hover {
+    background-color: whitesmoke;
+}
+
+.omni-display {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.shadowed {
+    background-color: white;
+    border: none;
+    box-shadow: 0 0 20px -5px rgba(0,0,0,0.2);
+}
+
+#add-link-modal, #help-modal {
+    padding: 8px;
+    border-radius: 18px;
+    font-size: 14px;
+    font-weight: 700;
+    width: 13vw;
+}
+
+#help-modal {
+    padding: 12px;
+}
