@@ -1,0 +1,45 @@
+button.back-button {
+    background-color: transparent;
+    border: none;
+    position: fixed; 
+    top: 105px;
+    left: 24px;
+    cursor: pointer;
+}
+
+#pin-show-container {
+    display: block;
+    border-radius: 18px;
+    box-shadow: 0 1px 20px 0 lightgray;
+    transform: translateX(15vw);
+    margin: 20px;
+    max-width: 70vw;
+}
+
+#pin-show {
+    display: flex;
+}
+
+#pin-show > img {
+    max-width: 35vw;
+    border-radius: 18px 0 0 18px;
+}
+
+.pin-show-desc {
+    max-width: 35vw;
+    padding: 25px;
+}
+
+.pin-show-desc > h3 {
+    font-weight: 900px;
+    font-size: 36px;
+}
+
+.pin-show-desc > p {
+    font-weight: lighter;
+    font-size: 14px;
+}
+
+.pin-show-desc > * {
+    margin: 16px 0 16px 0;
+}

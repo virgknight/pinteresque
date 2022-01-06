@@ -6,6 +6,7 @@ import loginFormContainer from "./session/login_form_container";
 import signupFormContainer from "./session/signup_form_container";
 import homePageContainer from "./home/home_page_container";
 import discoverFeedContainer from "./discover_feed/discover_feed_container";
+import pinShowContainer from "./pins/pin-show-container";
 
 const App = () => (
     <div>
@@ -17,7 +18,9 @@ const App = () => (
         <AuthRoute path="/signup" component={signupFormContainer} />
 
         {/* logged in routes */}
-        <Route path="/pins" component={discoverFeedContainer} />
+        {/* How can I have the below NOT reshuffle/rerender when a user hits the backspace to return to it? */}
+        <Route exact path="/" component={discoverFeedContainer} /> 
+        <Route path="/pins/:pinId" component={pinShowContainer} />
 
     </div>
 );

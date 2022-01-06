@@ -60,7 +60,7 @@ class NavBarLinks extends React.Component {
             <div className="header-elements"> 
                 <img src={window.round_logo} width="50" height="50" />
                 {currentUser ? 
-                    <><h1 className="header-text white">Home</h1> 
+                    <><h1 className="header-text white"><Link to="/">Home</Link></h1> 
                     <h1 className="header-text">Today</h1></>
                     : 
                     <h1 className="header-text red">Pinteresque</h1>}

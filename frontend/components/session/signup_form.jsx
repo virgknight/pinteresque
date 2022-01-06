@@ -51,7 +51,7 @@ class SignupForm extends React.Component {
         const newUserName = email.slice(0, email.indexOf('@'));
         const user = Object.assign({}, this.state, { age: parseInt(age), username: newUserName });
         this.props.processForm(user).then(() =>
-            this.props.history.push("/pins"));
+            this.props.history.push("/"));
     }
 
     handleInput(type) {

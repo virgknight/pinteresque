@@ -23,14 +23,14 @@ class LoginForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.login(user).then(() =>
-            this.props.history.push("/pins"));
+            this.props.history.push("/"));
     }
 
     handleDemo(e) {
         e.preventDefault();
         const demoUser = { email: "demo@demo.gmail.com", password: "football123"};
         this.props.login(demoUser).then(() =>
-            this.props.history.push("/pins"));
+            this.props.history.push("/"));
     }
 
     handleInput(type) {
