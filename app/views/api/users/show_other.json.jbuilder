@@ -1,0 +1,1 @@
+json.extract! @user, :id, :username, :short_bio, :pronouns, :display_name

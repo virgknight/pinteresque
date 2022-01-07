@@ -11,7 +11,10 @@ Pin.destroy_all
 
 require 'open-uri'
 
-demo_user = User.create(email: "demo@demo.gmail.com", username: "demouser", password: "football123", first_name: "Demo", last_name: "User", age: 99);
+demo_user = User.create(email: "demo@gmail.com", username: "demouser", password: "football123", first_name: "Demo", last_name: "User", age: 99, short_bio: "!(i can think of a good bio)");
+
+user1 = User.create(email: "trixie@hotmail.com", username: "trixie", password: "unnnnhhhhh", first_name: "Trixie", last_name: "Mattel", age: 35);
+user2 = User.create(email: "katya@icloud.com", username: "katya", password: "brightredscare", first_name: "Katya", last_name: "Zamolodchikova", age: 35);
 
 ### PINS USED IN SPLASH PAGE
 # Splash 1: dinner ideas
@@ -23,7 +26,7 @@ pin2 = Pin.create!(owner_id: demo_user.id, title: "Delicious veggie recipes");
 photo2 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/veggies.jpeg");
 pin2.photo.attach(io: photo2, filename: "veggies.jpeg");
 
-pin3 = Pin.create!(owner_id: demo_user.id, title: "Tacos sabrosos");
+pin3 = Pin.create!(owner_id: demo_user.id, title: "tacos sabrosos");
 photo3 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/tacos.jpeg");
 pin3.photo.attach(io: photo3, filename: "tacos.jpeg");
 
@@ -35,11 +38,11 @@ pin5 = Pin.create!(owner_id: demo_user.id, title: "12 Fancy Cocktails to try at 
 photo5 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/cocktail.jpeg");
 pin5.photo.attach(io: photo5, filename: "cocktail.jpeg");
 
-pin6 = Pin.create!(owner_id: demo_user.id, title: "sausage dish");
+pin6 = Pin.create!(owner_id: user2.id, title: "sausage dish");
 photo6 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/sausage-dish.jpeg");
 pin6.photo.attach(io: photo6, filename: "sausage-dish.jpeg");
 
-pin7 = Pin.create!(owner_id: demo_user.id, title: "Chicken Shawarma");
+pin7 = Pin.create!(owner_id: user1.id, title: "Chicken Shawarma", alt_text: "Simply delicious!");
 photo7 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/shawarma.jpeg");
 pin7.photo.attach(io: photo7, filename: "shawarma.jpeg");
 
@@ -48,7 +51,7 @@ pin8 = Pin.create!(owner_id: demo_user.id, title: "Oooo la la", alt_text: "la vi
 photo8 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/pink-french-food.jpeg");
 pin8.photo.attach(io: photo8, filename: "pink-french-food.jpeg");
 
-pin9 = Pin.create!(owner_id: demo_user.id, title: "10 photos to inspire your next 90's themed party", alt_text: "check it out on Buzzfeed");
+pin9 = Pin.create!(owner_id: user1.id, title: "10 photos to inspire your next 90's themed party", alt_text: "check it out on Buzzfeed");
 photo9 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/disco-balls.jpeg");
 pin9.photo.attach(io: photo9, filename: "disco-balls.jpeg");
 
@@ -56,7 +59,7 @@ pin10 = Pin.create!(owner_id: demo_user.id, title: "birthday party ideas!!");
 photo10 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/funky-party.jpeg");
 pin10.photo.attach(io: photo10, filename: "funky-party.jpeg");
 
-pin11 = Pin.create!(owner_id: demo_user.id, title: "Champagne Wishes");
+pin11 = Pin.create!(owner_id: user1.id, title: "Champagne Wishes");
 photo11 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/champage-tower.jpeg");
 pin11.photo.attach(io: photo11, filename: "champage-tower.jpeg");
 
@@ -85,7 +88,7 @@ pin17 = Pin.create!(owner_id: demo_user.id, title: "in the void");
 photo17 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/swimmer.jpeg");
 pin17.photo.attach(io: photo17, filename: "swimmer.jpeg");
 
-pin18 = Pin.create!(owner_id: demo_user.id, title: "Cute cats");
+pin18 = Pin.create!(owner_id: user2.id, title: "Cute cats", alt_text: "he so sad :(");
 photo18 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/cat-crisis.jpeg");
 pin18.photo.attach(io: photo18, filename: "cat-crisis.jpeg");
 
@@ -93,10 +96,10 @@ pin19 = Pin.create!(owner_id: demo_user.id, title: "Best places to sit and think
 photo19 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/thinking-man.jpeg");
 pin19.photo.attach(io: photo19, filename: "thinking-man.jpeg");
 
-pin20 = Pin.create!(owner_id: demo_user.id, title: "Funny candles");
+pin20 = Pin.create!(owner_id: user2.id, title: "Funny candles");
 photo20 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/candle-crisis.jpeg");
 pin20.photo.attach(io: photo20, filename: "candle-crisis.jpeg");
 
-pin21 = Pin.create!(owner_id: demo_user.id, title: "Lisa Frank says question everything");
+pin21 = Pin.create!(owner_id: user1.id, title: "Lisa Frank says question everything");
 photo21 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/neon-animals.jpeg");
 pin21.photo.attach(io: photo21, filename: "neon-animals.jpeg");

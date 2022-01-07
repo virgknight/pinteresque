@@ -14,3 +14,10 @@ export const getUserIcon = (user) => {
         <text x="50%" y="60%" textAnchor="middle" fill="#111" fontSize="18px">{user.display_name[0].toUpperCase()}</text>
     </svg>);
 };
+
+export const fetchOtherUser = (userId) => (
+    $.ajax({
+        url: `/api/users/other/${userId}`,
+        method: "GET",
+    })
+);
