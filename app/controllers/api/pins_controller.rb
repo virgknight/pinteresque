@@ -12,13 +12,13 @@ class Api::PinsController < ApplicationController
         if @pin.save
             render :show
         else
-            render json: @user.errors.full_messages, status: 422
+            render json: @pin.errors.full_messages, status: 422
         end
     end
 
     def update
         @pin = Pin.find(params[:id])
-        if @pin.update_attributes(pin_params)
+        if @pin.update(pin_params)
             render :show
         else
             render json: @pin.errors.full_messages, status: 422
@@ -37,6 +37,6 @@ class Api::PinsController < ApplicationController
 
     protected
     def pin_params
-        params.require(:pins).permit(:owner_id, :title, :alt_text)
+        params.require(:pin).permit(:owner_id, :title, :alt_text)
     end
 end

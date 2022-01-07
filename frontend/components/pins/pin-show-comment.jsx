@@ -25,7 +25,7 @@ class PinShowComment extends React.Component {
             
             <div id="pin-show-comment-bar" className="hidden">
                 <p>Ask a question, share feedback or give a fist bump</p>
-                <div class="ps-comment-input-container">
+                <div className="ps-comment-input-container">
                     {getUserIcon(this.props.currentUser)}
                     <input className="comment-input" type="text" placeholder="Add a comment" />
                 </div>

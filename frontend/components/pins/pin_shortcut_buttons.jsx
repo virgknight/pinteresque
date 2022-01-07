@@ -7,6 +7,7 @@ class PinShortcutButtons extends React.Component {
     constructor(props) {
         super(props);
         this.expand = this.expand.bind(this);
+        this.goToCreatePin = this.goToCreatePin.bind(this);
     }
 
     expand (cname) {
@@ -16,6 +17,12 @@ class PinShortcutButtons extends React.Component {
         };
     }
 
+    goToCreatePin (e) {
+        e.preventDefault;
+        this.expand("add-link-modal")();
+        this.props.history.push("/pin-builder");
+    }
+
     render () {
         const { currentUser } = this.props;
         return (
@@ -23,13 +30,11 @@ class PinShortcutButtons extends React.Component {
                 <aside id="omnipresent-buttons">
 
                     <div className="omni-display">
-                        <div id="add-link-modal" className="hidden shadowed">
-                            <Link to="/pin-builder">
-                                <div style={ {display: "flex", alignItems: "center",}}>
-                                    <AddIcon sx={{ fontSize: 26 }}/> 
-                                    <p>Create a pin</p>
-                                </div>
-                            </Link>
+                        <div id="add-link-modal" className="hidden shadowed" onClick={this.goToCreatePin}>
+                            <div style={ {display: "flex", alignItems: "center",}}>
+                                <AddIcon sx={{ fontSize: 26 }}/> 
+                                <p>Create a pin</p>
+                            </div>
                         </div>
                         <button className="shadowed" onClick={this.expand("add-link-modal")}>
                             <AddIcon sx={{ fontSize: 36 }}/>

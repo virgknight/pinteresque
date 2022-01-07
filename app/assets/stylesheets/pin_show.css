@@ -67,6 +67,31 @@ button.back-button:hover {
     justify-content: space-evenly;
 }
 
+.ps-navbutton {
+    background-color: transparent;
+    border: none;
+}
+
+.ps-more {
+    position: absolute;
+    left: 45%;
+    width: 10vw;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.ps-more > li {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.ps-more > li:hover {
+    background-color: #efefef;
+}
+
 .ps-nav-icons svg {
     cursor: pointer;
     padding: 10px;
@@ -77,7 +102,7 @@ button.back-button:hover {
     background-color: lightgray;
 }
 
-/* Title, alt text, user */
+/* Title, alt text, user fields */
 .pin-show-desc > h3 {
     font-weight: 900;
     font-size: 36px;
@@ -99,6 +124,7 @@ button.back-button:hover {
     cursor: pointer;
     padding: 0 2px 0 2px;
     border-radius: 25px;
+    margin-left: 3px;
 }
 
 .hidden {

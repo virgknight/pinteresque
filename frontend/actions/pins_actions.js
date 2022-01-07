@@ -41,13 +41,16 @@ export const requestPin = pinId => dispatch => (
 export const createPin = pin => dispatch => (
     ApiPinsUtil.createPin(pin).then(
         (pin) => dispatch(receivePin(pin)),
-        (errors) => dispatch(receivePinErrors(errors)))
+        (errors) => dispatch(receivePinErrors(errors.responseJSON)))
 );
 
 export const updatePin = pin => dispatch => (
     ApiPinsUtil.updatePin(pin).then(
         (pin) => dispatch(receivePin(pin)),
-        (errors) => dispatch(receivePinErrors(errors)))
+        (errors) => {
+            debugger;
+            dispatch(receivePinErrors(errors.responseJSON));
+        })
 );
 
 export const deletePin = pinId => dispatch => (

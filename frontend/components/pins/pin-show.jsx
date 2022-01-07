@@ -1,9 +1,9 @@
 import React from "react";
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import IosShareIcon from '@mui/icons-material/IosShare';
 import LinkIcon from '@mui/icons-material/Link';
 
+import PinShowMore from "./pin_show_more";
 import PinShowComment from "./pin-show-comment";
 
 class PinShow extends React.Component {
@@ -22,7 +22,7 @@ class PinShow extends React.Component {
     }
 
     render () {
-        const { pin } = this.props;
+        const { pin, currentUser } = this.props;
 
         if (!pin) return null;
 
@@ -38,7 +38,7 @@ class PinShow extends React.Component {
                         <div className="pin-show-desc">
                             <div className="pin-show-nav">
                                 <div className="ps-nav-icons">
-                                    <MoreHorizIcon fontWeight="900" />
+                                    <PinShowMore pin={pin} currentUser={currentUser} />
                                     <IosShareIcon fontWeight="900" />
                                     <div onClick={this.handleCopy}><LinkIcon fontWeight="900" /></div>
                                 </div>
@@ -49,7 +49,7 @@ class PinShow extends React.Component {
                             <h3>{pin.title}</h3>
                             <p>{pin.alt_text}</p>
                             <br />
-                            <PinShowComment currentUser={this.props.currentUser}/>
+                            <PinShowComment currentUser={currentUser}/>
                         </div>
                     </section>
                 </div>

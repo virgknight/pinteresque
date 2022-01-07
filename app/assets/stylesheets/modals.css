@@ -1,3 +1,5 @@
+/* General modal formatting */
+
 .modal {
   z-index: 998;
   position: fixed;
@@ -23,8 +25,6 @@
   background-color: white;
   border-radius: 32px;
   min-height: initial;
-  width: 425px;
-  top: 12%;
   margin: 0 auto;
   text-align: center;
   display: flex;
@@ -52,8 +52,14 @@
   width: 300px;
 }
 
+/* Sign up/log in modals */
+.session-modal {
+  width: 425px;
+  top: 12%;
+}
+
 .demo-user-button {
-    background-color: #4267b2;;
+    background-color: #4267b2;
 }
 .demo-user-button:hover {
     background-color: rgb(9, 30, 66);;
@@ -95,4 +101,94 @@ div.close-button {
 
 input.errored-field {
   border: 1px solid red;
+}
+
+/* Edit pin modal */
+.edit-modal {
+  background: rgba(0, 0, 0, .7);
+}
+
+.edit-modal:hover {
+  cursor: zoom-out;
+}
+
+.edit-pin-modal {
+  cursor: auto;
+  width: 58vw;
+  top: 15px;
+  padding: 30px;
+}
+
+.formtitle {
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 0.5px;
+  margin: 5px 0 50px 0;
+}
+
+.formbody {
+  width: 58vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-inputs {
+  width: 39vw;
+  height: fit-content;
+  margin-right: 3vw;
+  line-height: 0;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+img.edit-preview {
+  width: 16vw;
+  margin: 5px;
+  border-radius: 14px;
+}
+
+.edit-inputs tr:first-child {
+  border-bottom: 1px solid lightgray;
+}
+
+.edit-inputs td:first-child { 
+  text-align: left;
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+.edit-inputs td:last-child { 
+  text-align: right;
+  width: 25vw;
+}
+
+.form-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.form-footer button {
+  display:inline-block;
+  padding: 10px;
+  margin: 0 3px 0 3px;
+  border:0.16em solid transparent;
+  border-radius: 24px;
+  box-sizing: border-box;
+  text-align:center;
+  background-color: #efefef;
+  font-weight: bolder;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-footer button:hover {
+  filter: brightness(90%);
+}
+
+.form-footer button.red {
+  background-color: rgb(230, 0, 35);
+  color: white;
 }

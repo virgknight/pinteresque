@@ -1,14 +1,18 @@
 import { connect } from "react-redux";
-import { requestPin } from "../../actions/pins_actions";
+import { requestPin, updatePin, deletePin, clearPinErrors } from "../../actions/pins_actions";
 import PinEditForm from "./pin_edit_form";
 
-const mSTP = ({ session, entities: { users, pins } }, ownProps) => ({
+const mSTP = ({ session, entities: { users, pins }, errors }, ownProps) => ({
     pin: pins[ownProps.match.params.pinId],
-    currentUser: users[session.currentUserId]
+    currentUser: users[session.currentUserId],
+    errors: errors.pins
 });
 
 const mDTP = dispatch => ({
-    requestPin: (pinId) => dispatch(requestPin(pinId))
+    requestPin: (pinId) => dispatch(requestPin(pinId)),
+    updatePin: (pin) => dispatch(updatePin(pin)),
+    deletePin: (pinId) => dispatch(deletePin(pinId)),
+    clearPinErrors: () => dispatch(clearPinErrors())
 });
 
 export default connect(mSTP, mDTP)(PinEditForm);

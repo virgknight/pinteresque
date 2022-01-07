@@ -43,7 +43,7 @@ class LoginForm extends React.Component {
         let { email, password } = this.state;
         return (
             <div className="modal">
-                <div className="modal-content">
+                <div className="modal-content session-modal">
                 <div onClick={() => this.props.history.push("/")} className="close-button"><CloseIcon /></div>
                 <form>
                     <img src={window.round_logo} width="50" height="50" />

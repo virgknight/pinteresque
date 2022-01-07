@@ -114,6 +114,14 @@ p.pin-alt {
     width: 13vw;
 }
 
+#add-link-modal {
+    cursor: pointer;
+}
+
+#add-link-modal:hover {
+    background-color: lightgray;
+}
+
 #help-modal {
     padding: 12px;
 }
