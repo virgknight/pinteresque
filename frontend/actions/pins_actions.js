@@ -48,7 +48,6 @@ export const updatePin = pin => dispatch => (
     ApiPinsUtil.updatePin(pin).then(
         (pin) => dispatch(receivePin(pin)),
         (errors) => {
-            debugger;
             dispatch(receivePinErrors(errors.responseJSON));
         })
 );

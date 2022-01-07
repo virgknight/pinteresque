@@ -24,6 +24,12 @@ class DiscoverGrid extends React.Component {
         }
     }
 
+    componentWillUnmount () {
+        // Somehow this magically gets rid of the weird unmounted component error
+        // s/o StackOverflow
+        this.setState = () => { return; };
+    }
+
     createInitialDisplay() {
         const numInitialImages = this.getNumOfImagesToAdd();
 
