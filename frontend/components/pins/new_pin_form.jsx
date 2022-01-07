@@ -29,6 +29,7 @@ class NewPinForm extends React.Component {
 
     handleSubmit (e) {
         e.preventDefault();
+
         if (!this.state.photoFile) return;
 
         const formData = new FormData();
@@ -36,6 +37,9 @@ class NewPinForm extends React.Component {
         formData.append("pin[alt_text]", this.state.alt_text);
         formData.append("pin[owner_id]", this.state.owner_id);
         formData.append("pin[photo]", this.state.photoFile);
+
+        this.props.createPin(formData)
+            .then(({pin}) => this.props.history.push(`/pins/${pin.id}`));
     }
 
     render () {
@@ -51,7 +55,7 @@ class NewPinForm extends React.Component {
                                 <FileUploadIcon sx={{ fontSize: 40, color: "gray" }} />
                                 <input
                                     type="file"
-                                    onChange={this.receiveFile} />
+                                    onChange={this.handleFile} />
                             </div>
                         </div>
                     </div>

@@ -9,7 +9,6 @@ class PinShowMore extends React.Component {
 
         this.reveal = this.reveal.bind(this);
         this.hide = this.hide.bind(this);
-        this.handleEdit = this.handleEdit.bind(this);
     }
 
     reveal () {
@@ -20,16 +19,11 @@ class PinShowMore extends React.Component {
         this.setState({appear: false});
     }
 
-    handleEdit () {
-        this.hide();
-        this.props.history.push(`/pins/${pin.id}/edit`);
-    }
-
     render () {
         const {currentUser, pin} = this.props;
 
         const editOption = (currentUser.id === pin.owner_id) ? 
-            (<li><Link to={`/pins/${pin.id}/edit`}>Edit Pin</Link></li>) : 
+            (<li onClick={this.hide}><Link to={`/pins/${pin.id}/edit`}>Edit Pin</Link></li>) : 
                             null;
 
         return (

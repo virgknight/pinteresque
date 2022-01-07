@@ -91,3 +91,7 @@ button.save {
     right: 50px;
     top: 30px;
 }
+
+button.save:hover {
+    filter: brightness(90%);
+}

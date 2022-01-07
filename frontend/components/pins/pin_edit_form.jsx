@@ -14,6 +14,7 @@ class PinEditForm extends React.Component {
         this.escape = this.escape.bind(this);
         this.returnToPinShow = this.returnToPinShow.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     componentDidMount () {
@@ -55,15 +56,19 @@ class PinEditForm extends React.Component {
             .then(() => this.returnToPinShow());
     }
 
+    handleDelete(e) {
+        e.preventDefault();
+        this.props.deletePin(this.state.id)
+            .then(() => this.props.history.go(-2));
+            // reroutes user to last visited page before pin show
+    }
+
     render () {
         const {currentUser, pin} = this.props;
         const {title, alt_text} = this.state;
 
         if (!pin || this.missingCurrentPinInfo) return null;
-        if (currentUser.id !== pin.owner_id) {
-            console.log("hitting redirect");
-            return (<Redirect to={`/pins/${pin.id}`} />);
-        };
+        if (currentUser.id !== pin.owner_id) (<Redirect to={`/pins/${pin.id}`} />);
 
         return (
         <div className="modal edit-modal" onClick={this.escape}>
@@ -101,7 +106,7 @@ class PinEditForm extends React.Component {
                 ))}
 
                 <div className="form-footer">
-                    <button>Delete</button>
+                    <button onClick={this.handleDelete}>Delete</button>
                     <div>
                         <button onClick={this.returnToPinShow}>Cancel</button>
                         <button onClick={this.handleSubmit} className="red">Save</button>
