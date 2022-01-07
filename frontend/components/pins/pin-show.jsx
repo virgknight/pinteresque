@@ -4,6 +4,7 @@ import IosShareIcon from '@mui/icons-material/IosShare';
 import LinkIcon from '@mui/icons-material/Link';
 
 import PinShowMore from "./pin_show_more";
+import PinOwnerInfo from "./pin_owner_info";
 import PinShowComment from "./pin-show-comment";
 
 class PinShow extends React.Component {
@@ -22,7 +23,7 @@ class PinShow extends React.Component {
     }
 
     render () {
-        const { pin, currentUser } = this.props;
+        const { pin, currentUser, getUserIcon } = this.props;
 
         if (!pin) return null;
 
@@ -49,7 +50,10 @@ class PinShow extends React.Component {
                             <h3>{pin.title}</h3>
                             <p>{pin.alt_text}</p>
                             <br />
-                            <PinShowComment currentUser={currentUser}/>
+                            {/* VKNOTE: UPDATE LOGIC so that this gets fed the actual pin owner's info! */}
+                            <PinOwnerInfo getUserIcon={getUserIcon} owner={currentUser} />
+                            <br />
+                            <PinShowComment currentUser={currentUser} getUserIcon={getUserIcon}/>
                         </div>
                     </section>
                 </div>

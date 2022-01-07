@@ -60,7 +60,10 @@ class PinEditForm extends React.Component {
         const {title, alt_text} = this.state;
 
         if (!pin || this.missingCurrentPinInfo) return null;
-        if (currentUser.id !== pin.owner_id) return (<Redirect to={`/pins/${pin.id}`} />);
+        if (currentUser.id !== pin.owner_id) {
+            console.log("hitting redirect");
+            return (<Redirect to={`/pins/${pin.id}`} />);
+        };
 
         return (
         <div className="modal edit-modal" onClick={this.escape}>

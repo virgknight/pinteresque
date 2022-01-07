@@ -1,6 +1,6 @@
 import React from "react";
 import FileUploadIcon from '@mui/icons-material/FileUpload';
-import { getUserIcon } from "../../util/user_util";
+import PinOwnerInfo from "./pin_owner_info";
 
 class NewPinForm extends React.Component {
     constructor(props) {
@@ -13,7 +13,7 @@ class NewPinForm extends React.Component {
         };
 
         this.update = this.update.bind(this);
-        this.receiveFile = this.receiveFile.bind(this);
+        this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -63,10 +63,7 @@ class NewPinForm extends React.Component {
                             placeholder="Add your title"
                             onChange={this.update("title")}/>
 
-                        <section className="uploader-info">
-                            {getUserIcon(currentUser)}
-                            <h4>{currentUser.display_name}</h4>
-                        </section>
+                        <PinOwnerInfo getUserIcon={this.props.getUserIcon} owner={currentUser} />
 
                         <input className="np-alt"
                             type="text"

@@ -55,6 +55,17 @@ input[type=file] {
 .uploader-info {
     display: flex;
     align-items: center;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.uploader-info:hover {
+    filter: brightness(90%);
+}
+
+.uploader-info h4 {
+    font-weight: 700;
+    font-size: 14px;
 }
 
 input.np-title {

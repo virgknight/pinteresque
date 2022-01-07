@@ -74,6 +74,7 @@ button.back-button:hover {
 
 .ps-more {
     position: absolute;
+    top: 10%;
     left: 45%;
     width: 10vw;
     padding: 10px;
@@ -81,11 +82,18 @@ button.back-button:hover {
 }
 
 .ps-more > li {
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.ps-more a {
+    padding: 0px;
+}
+
+.ps-more > li, .ps-more a {
     text-align: left;
     font-size: 16px;
     font-weight: 700;
-    padding: 4px;
-    border-radius: 8px;
 }
 
 .ps-more > li:hover {

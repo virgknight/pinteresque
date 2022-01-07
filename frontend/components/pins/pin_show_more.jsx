@@ -7,29 +7,43 @@ class PinShowMore extends React.Component {
         super(props);
         this.state = {appear: false};
 
-        this.whenFocusOrBlur = this.whenFocusOrBlur.bind(this);
+        this.reveal = this.reveal.bind(this);
+        this.hide = this.hide.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
     }
 
-    whenFocusOrBlur () {
-        this.setState({appear: !this.state.appear});
+    reveal () {
+        this.setState({appear: true});
+    }
+
+    hide () {
+        this.setState({appear: false});
+    }
+
+    handleEdit () {
+        this.hide();
+        this.props.history.push(`/pins/${pin.id}/edit`);
     }
 
     render () {
         const {currentUser, pin} = this.props;
 
         const editOption = (currentUser.id === pin.owner_id) ? 
-                            (<li><Link to={`/pins/${pin.id}/edit`}>Edit Pin</Link></li>) : 
+            (<li><Link to={`/pins/${pin.id}/edit`}>Edit Pin</Link></li>) : 
                             null;
 
         return (
             <div>
-                <button className="ps-navbutton" onFocus={this.whenFocusOrBlur} onBlur={this.whenFocusOrBlur}>
-                    <MoreHorizIcon fontWeight="900" />
-                    <ul onClick={e => e.stopPropagation()} 
-                        className={this.state.appear ? "ps-more shadowed" : "hidden ps-more shadowed"}>
+                <div onClick={this.reveal}><MoreHorizIcon fontWeight="900" /></div>
+
+                <div onClick={this.hide}
+                    className={this.state.appear ? "ps-navbutton modal" : "hidden ps-navbutton modal"}>
+                    <ul onClick={e => e.stopPropagation()}
+                        className="ps-more shadowed">
+                        <li>Download image</li>
                         {editOption}
                     </ul>
-                </button>
+                </div>
             </div>
         );
     }
