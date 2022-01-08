@@ -30,9 +30,6 @@
     justify-content: center;
     padding: 20px 0 30px 0;
     background-color: white;
-    position: sticky; 
-    top: 78px;
-    z-index: 1;
 }
 
 #created-saved-bar a {
@@ -40,4 +37,9 @@
     padding: 3px;
     font-weight: 600;
     letter-spacing: 0.3px;
+}
+
+.underlined {
+    text-decoration: underline 3px solid black;
+    text-underline-offset: 8px;
 }

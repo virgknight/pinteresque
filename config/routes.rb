@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create, :update, :destroy]
-    get 'users/other/:id', to: 'users#show_other', as: 'show_other_user'
+    get 'users/other/:id', to: 'users#show_other'
+    get 'users/:id/pins', to: 'users#index_pins'
 
     resources :pins, except: [:new, :edit]
     resource :session, only: [:create, :destroy]

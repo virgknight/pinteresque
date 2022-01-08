@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 class UserShow extends React.Component {
     componentDidMount () {
@@ -25,8 +25,8 @@ class UserShow extends React.Component {
                     {actionButton}
                 </header>
                 <section id="created-saved-bar">
-                    <Link to={`/users/${user.id}/_created`}>Created</Link>
-                    <Link to={`/users/${user.id}/_saved`}>Saved</Link>
+                    <NavLink to={`/users/${user.id}/_created`} activeClassName="underlined">Created</NavLink>
+                    <NavLink to={`/users/${user.id}/_saved`} activeClassName="underlined">Saved</NavLink>
                 </section>
             </main>
         );

@@ -28,6 +28,10 @@ class Api::UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 
+    def index_pins
+        @user = User.includes(:pins).find(params[:id])
+    end
+
     protected
     def user_params
         params.require(:user).permit(:email, :username, :password, :age, :first_name, :last_name, :short_bio, :pronouns)

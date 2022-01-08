@@ -36,3 +36,10 @@ export const fetchOtherUser = (userId) => (
         method: "GET",
     })
 );
+
+export const getUserPins = userId => (
+    $.ajax({
+        url:`/api/users/${userId}/pins`,
+        method: "GET"
+    })
+)
