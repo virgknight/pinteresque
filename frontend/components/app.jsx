@@ -9,6 +9,7 @@ import signupFormContainer from "./session/signup_form_container";
 import pinShortcutButtonsContainer from "./pins/pin_shortcut_buttons_container";
 import pinEditFormContainer from "./pins/pin_edit_form_container";
 import pinShowContainer from "./pins/pin-show-container";
+import userShowContainer from "./users/user_show_container";
 import newPinFormContainer from "./pins/new_pin_form_container";
 import discoverFeedContainer from "./discover_feed/discover_feed_container";
 
@@ -27,6 +28,7 @@ const App = () => (
         {/* these are not included in switch, as pin/edit appears as a modal over the pin itself */}
         <ProtectedRoute path="/pins/:pinId/edit" component={pinEditFormContainer} />
         <ProtectedRoute path="/pins/:pinId" component={pinShowContainer} />
+        <ProtectedRoute path="/users/:userId" component={userShowContainer} />
         
         <Switch>
             <ProtectedRoute path="/pin-builder" component={newPinFormContainer} />

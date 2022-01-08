@@ -1,0 +1,43 @@
+.user-show-header {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.user-show-header h1 {
+    font-weight: 700;
+    font-size: 36px;
+    margin: 10px;
+}
+
+.user-show-header h5 {
+    font-weight: lighter;
+    font-size: 16px;
+}
+
+.user-show-header h6 {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 8px;
+}
+
+.user-show-header button {
+    padding: 14px;
+}
+
+#created-saved-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0 30px 0;
+    background-color: white;
+    position: sticky; 
+    top: 78px;
+    z-index: 1;
+}
+
+#created-saved-bar a {
+    margin: 0 8px 0 8px;
+    padding: 3px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}

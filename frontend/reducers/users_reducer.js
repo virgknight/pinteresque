@@ -11,7 +11,6 @@ const usersReducer = (state = defaultState, action) => {
         case RECEIVE_CURRENT_USER:
             return Object.assign(newState, { [action.currentUser.id]: action.currentUser});
         case RECEIVE_OTHER_USER:
-            debugger;
             if (!newState.hasOwnProperty(action.user.id)) {
                 return Object.assign(newState, { [action.user.id]: action.user });
             } else {

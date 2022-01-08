@@ -5,7 +5,7 @@ const MenuDropdown = ({ currentUser, logout }) => {
     return (
         <div id="menu-dropdown" className="dropdown-content">
             <h6>Currently in</h6>
-            <Link to={`/${currentUser.id}/_saved`}>
+            <Link to={`/users/${currentUser.id}/_saved`}>
                 <div className="profile-summary">
                     <svg height="80" width="80">
                         <circle cx="40" cy="40" r="30" fill="#efefef" />
