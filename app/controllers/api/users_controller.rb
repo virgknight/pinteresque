@@ -11,7 +11,11 @@ class Api::UsersController < ApplicationController
 
     def update
         @user = current_user
-        if @user.update_attributes(user_params)
+        demo_user = User.find_by(email: "demo@gmail.com")
+
+        if @user.id == demo_user.id
+            render json: ["Cmon now, don't mess with my project. You know you can't update the demo user."], status: 403
+        elsif @user.update_attributes(user_params)
             render :show
         else
             render json: @user.errors.full_messages, status: 422
@@ -20,8 +24,12 @@ class Api::UsersController < ApplicationController
 
     def destroy
         @user = current_user
-        @user.destroy
-        render :show
+        demo_user = User.find_by(email: "demo@gmail.com")
+
+        if @user.id != demo_user.id
+            @user.destroy
+            render :show
+        end
     end
 
     def show_other
@@ -34,6 +42,6 @@ class Api::UsersController < ApplicationController
 
     protected
     def user_params
-        params.require(:user).permit(:email, :username, :password, :age, :first_name, :last_name, :short_bio, :pronouns)
+        params.require(:user).permit(:email, :username, :password, :age, :first_name, :last_name, :short_bio, :pronouns, :avatar)
     end
 end

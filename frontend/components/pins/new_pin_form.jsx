@@ -55,6 +55,7 @@ class NewPinForm extends React.Component {
                                 <FileUploadIcon sx={{ fontSize: 40, color: "gray" }} />
                                 <input
                                     type="file"
+                                    className="choose-pin-photo"
                                     onChange={this.handleFile} />
                             </div>
                         </div>
