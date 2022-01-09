@@ -125,7 +125,13 @@ input.search-input:focus {
     margin-right: 15px;
 }
 
-.profile-icon, .menu-icon:hover, .menu-icon:focus {
+.profile-icon > a img, .profile-icon > a svg {
+    position: relative;
+    top: -8px;
+    left: -8px;
+}
+
+.menu-icon:hover, .menu-icon:focus {
     background-color: #efefef;
     border-radius: 50%;
 }

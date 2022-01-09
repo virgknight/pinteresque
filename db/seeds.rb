@@ -12,6 +12,8 @@ Pin.destroy_all
 require 'open-uri'
 
 demo_user = User.create(email: "demo@gmail.com", username: "demouser", password: "football123", first_name: "Demo", last_name: "User", age: 99, short_bio: "!(i can think of a good bio)");
+demo_profile = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/Screen+Shot+2022-01-09+at+10.57.36+AM.png");
+demo_user.avatar.attach(io: demo_profile, filename: "orange-cat.jpeg");
 
 user1 = User.create(email: "trixie@hotmail.com", username: "trixie", password: "unnnnhhhhh", first_name: "Trixie", last_name: "Mattel", age: 35);
 user2 = User.create(email: "katya@icloud.com", username: "katya", password: "brightredscare", first_name: "Katya", last_name: "Zamolodchikova", age: 35);
@@ -103,3 +105,20 @@ pin20.photo.attach(io: photo20, filename: "candle-crisis.jpeg");
 pin21 = Pin.create!(owner_id: user1.id, title: "Lisa Frank says question everything");
 photo21 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/neon-animals.jpeg");
 pin21.photo.attach(io: photo21, filename: "neon-animals.jpeg");
+
+### Non-splash seed pins
+pin22 = Pin.create!(owner_id: demo_user.id, title: "desert critters");
+photo22 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/javelinas.jpeg");
+pin22.photo.attach(io: photo22, filename: "javelinas.jpeg");
+
+pin23 = Pin.create!(owner_id: demo_user.id, title: "Top 10 Most Adventurous Dog Breeds");
+photo23 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/german-shepherd.jpeg");
+pin23.photo.attach(io: photo23, filename: "german-shepherd.jpeg");
+
+pin24 = Pin.create!(owner_id: user2.id, title: "k i t t i e s");
+photo24 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/brown-kitten.jpeg");
+pin24.photo.attach(io: photo24, filename: "brown-kitten.jpeg");
+
+pin25 = Pin.create!(owner_id: demo_user.id, title: "hi friend");
+photo25 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/alpaca.jpeg");
+pin25.photo.attach(io: photo25, filename: "alpaca.jpeg");

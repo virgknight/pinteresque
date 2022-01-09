@@ -59,7 +59,7 @@ class LoginForm extends React.Component {
                         onChange={this.handleInput('password')}></input>
                     <br />
 
-                    {this.props.errors.map((error) => (<p className="error">{error}</p>))}
+                    {this.props.errors.map((error, i) => (<p key={`err${i}`} className="error">{error}</p>))}
                      
                     <button className="modal-button" 
                             onClick={this.handleSubmit}>Log in</button>

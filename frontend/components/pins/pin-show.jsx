@@ -14,7 +14,8 @@ class PinShow extends React.Component {
     }
 
     componentDidMount () {
-        this.props.requestPin(this.props.match.params.pinId);
+        this.props.requestPin(this.props.match.params.pinId)
+            .then(({pin}) => this.props.requestOtherUser(pin.owner_id));
     }
 
     handleCopy (e) {
@@ -26,6 +27,7 @@ class PinShow extends React.Component {
         const { pin, currentUser, getUserIcon } = this.props;
 
         if (!pin) return null;
+        const pinOwner = this.props.users[pin.owner_id];
 
         return (
             <main>
@@ -50,8 +52,7 @@ class PinShow extends React.Component {
                             <h3>{pin.title}</h3>
                             <p>{pin.alt_text}</p>
                             <br />
-                            {/* VKNOTE: UPDATE LOGIC so that this gets fed the actual pin owner's info! */}
-                            <PinOwnerInfo getUserIcon={getUserIcon} owner={currentUser} />
+                            {pinOwner ? <PinOwnerInfo getUserIcon={getUserIcon} owner={pinOwner} /> : null}
                             <br />
                             <PinShowComment currentUser={currentUser} getUserIcon={getUserIcon}/>
                         </div>

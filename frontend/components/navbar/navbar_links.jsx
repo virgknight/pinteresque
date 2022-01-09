@@ -32,10 +32,7 @@ class NavBarLinks extends React.Component {
                 <div className="inbox-icon nav-icon"><SmsIcon sx={{ fontSize: 30, color: "gray" }} /></div>
                 <div className="profile-icon nav-icon">
                     <Link to={`/users/${currentUser.id}/_saved`}>
-                        <svg height="20" width="20">
-                            <circle cx="10" cy="10" r="8" fill="#efefef" />
-                            <text x="33%" y="50%" textAnchor="middle" fill="#111" fontSize="12px">{currentUser.display_name[0].toUpperCase()}</text>
-                        </svg>
+                        {this.props.getUserIconMini(currentUser)}
                     </Link>
                 </div>
                 <div className="menu-icon nav-icon" onClick={this.toggleDropdown}>
