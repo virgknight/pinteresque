@@ -64,8 +64,9 @@ class PinEditForm extends React.Component {
     }
 
     render () {
-        const {currentUser, pin} = this.props;
+        const {currentUser, pin, errors} = this.props;
         const {title, alt_text} = this.state;
+        const hasErrors = errors.length > 0;
 
         if (!pin || this.missingCurrentPinInfo) return null;
         if (currentUser.id !== pin.owner_id) (<Redirect to={`/pins/${pin.id}`} />);
@@ -74,6 +75,7 @@ class PinEditForm extends React.Component {
         <div className="modal edit-modal" onClick={this.escape}>
             <form className="edit-pin-modal modal-content">
                 <h2 className="formtitle">Edit this Pin</h2>
+                {hasErrors ? (<p className="error">All pins must have a title!</p>) : null}
 
                 <div className="formbody">
                     <table className="edit-inputs">
@@ -83,6 +85,7 @@ class PinEditForm extends React.Component {
                             <td>
                                 <input type="text"
                                     value={title}
+                                    className={hasErrors ? "errored-field" : ""}
                                     onChange={this.update("title")} />
                             </td>
                         </tr>
@@ -100,10 +103,6 @@ class PinEditForm extends React.Component {
 
                     <img className="edit-preview" src={pin.photoUrl} />
                 </div>
-
-                {this.props.errors.map((err) => (
-                    <p className="error">{err}</p>
-                ))}
 
                 <div className="form-footer">
                     <button onClick={this.handleDelete}>Delete</button>
