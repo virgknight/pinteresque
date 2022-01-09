@@ -12,7 +12,7 @@ class UserShow extends React.Component {
         if (!user) return null;
 
         const actionButton = (user.id === currentUser.id) ? 
-            (<button className="styled-button">Edit Profile</button>) :
+            (<button className="styled-button" onClick={() => this.props.history.push("/settings/edit-profile") }>Edit Profile</button>) :
             (<button className="styled-button red">Follow</button>);
 
         return (

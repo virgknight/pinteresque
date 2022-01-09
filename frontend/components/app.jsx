@@ -14,6 +14,8 @@ import newPinFormContainer from "./pins/new_pin_form_container";
 
 import userShowContainer from "./users/user_show_container";
 import userCreatedContainer from "./users/user_created_container";
+import UserSettingsNav from "./users/user_settings_nav";
+import editProfileContainer from "./users/edit_profile_form_container";
 
 import discoverFeedContainer from "./discover_feed/discover_feed_container";
 
@@ -36,6 +38,8 @@ const App = () => (
 
         <ProtectedRoute path="/users/:userId" component={userShowContainer} />
         <ProtectedRoute path="/users/:userId/_created" component={userCreatedContainer} />
+        <ProtectedRoute path="/settings" component={UserSettingsNav} />
+        <ProtectedRoute path="/settings/edit-profile" component={editProfileContainer} />
 
         <Route exact path="/" component={discoverFeedContainer} /> 
     </div>

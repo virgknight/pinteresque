@@ -18,6 +18,7 @@ class UserCreated extends React.Component {
 
     render () {
         const usersPins = Object.values(this.props.pins).filter((pin) => pin.owner_id === this.props.user.id);
+        usersPins.reverse(); // show most recent first
 
         return <DiscoverGridContainer pins={usersPins} infinite={this.infinite} />;
     }

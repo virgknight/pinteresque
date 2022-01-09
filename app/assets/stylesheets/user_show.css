@@ -9,7 +9,7 @@
     margin: 10px;
 }
 
-.user-show-header h5 {
+.user-show-header h5, .edit-form h5 {
     font-weight: lighter;
     font-size: 16px;
 }
@@ -42,4 +42,94 @@
 .underlined {
     text-decoration: underline 3px solid black;
     text-underline-offset: 8px;
+}
+
+/* User settings forms */
+#user-settings-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    padding: 20px;
+}
+
+#user-settings-nav > a {
+    font-weight: 700;
+    padding: 14px 0 14px 0;
+}
+
+.edit-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.edit-form {
+    width: 50vw;
+    margin-top: 50px;
+    margin-left: 25vw;
+}
+
+.edit-form h1 {
+    font-weight: 700;
+    font-size: 28px;
+    padding-bottom: 10px;
+}
+
+.edit-profile {
+    padding-top: 30px;
+}
+
+.edit-profile label, .form-subtitle {
+    display: block;
+    font-weight: lighter;
+    font-size: 12px;
+}
+
+.form-subtitle {
+    color: #767676;
+}
+
+.photo-modal {
+    width: 35%;
+    top: 40%;
+}
+
+input.choose-photo::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+input.choose-photo::before {
+    content: "Choose photo";
+    cursor: pointer;
+    display:inline-block;
+    padding:8px 5px 8px 5px;
+    margin:0 0.1em 0.1em 0;
+    border:0.16em solid transparent;
+    border-radius: 24px;
+    box-sizing: border-box;
+    text-align:center;
+    background-color: rgb(230, 0, 35);
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+input.choose-photo:hover::before {
+    filter: brightness(90%);
+}
+
+.edit-profile input {
+    width: 495px;
+}
+
+input.name {
+    width: 230px;
+    margin-right: 10px;
+}
+
+.form-subtitle {
+    font-weight: lighter;
 }
