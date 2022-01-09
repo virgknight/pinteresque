@@ -192,3 +192,18 @@ img.edit-preview {
   background-color: rgb(230, 0, 35);
   color: white;
 }
+
+/* Notification modals */
+.notification-modal {
+  background-color: black;
+  color: white;
+  font-weight: lighter;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  text-align: center;
+  padding: 30px;
+  border-radius: 30px;
+  z-index: 1000;
+}

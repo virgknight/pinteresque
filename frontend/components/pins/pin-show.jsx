@@ -21,6 +21,7 @@ class PinShow extends React.Component {
     handleCopy (e) {
         e.preventDefault();
         navigator.clipboard.writeText(window.location.href);
+        this.props.notify();
     }
 
     render () {

@@ -1,7 +1,9 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import NavBarLinksContainer from "./navbar/navbar_links_container";
+import NotificationModal from "./home/notification_modal";
+
 import homePageContainer from "./home/home_page_container";
 import loginFormContainer from "./session/login_form_container";
 import signupFormContainer from "./session/signup_form_container";
@@ -23,6 +25,7 @@ import discoverFeedContainer from "./discover_feed/discover_feed_container";
 const App = () => (
     <div>
         <NavBarLinksContainer />
+        <NotificationModal />
 
         {/* logged out routes */}
         <Route path="/" component={homePageContainer} />

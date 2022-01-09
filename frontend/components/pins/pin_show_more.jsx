@@ -34,7 +34,7 @@ class PinShowMore extends React.Component {
                     className={this.state.appear ? "ps-navbutton modal" : "hidden ps-navbutton modal"}>
                     <ul onClick={e => e.stopPropagation()}
                         className="ps-more shadowed">
-                        <li>Download image</li>
+                        <li><a href={pin.photoUrl} download>Download image</a></li>
                         {editOption}
                     </ul>
                 </div>
