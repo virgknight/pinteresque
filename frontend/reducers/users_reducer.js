@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
-import { RECEIVE_OTHER_USER } from "../actions/users_actions";
+import { RECEIVE_OTHER_USER, REMOVE_USER } from "../actions/users_actions";
 
 const defaultState = { };
 
@@ -16,6 +16,9 @@ const usersReducer = (state = defaultState, action) => {
             } else {
                 return newState;
             }
+        case REMOVE_USER:
+            delete newState[action.userId];
+            return newState;
         default:
             return state;
     }

@@ -15,12 +15,18 @@ class UserShow extends React.Component {
             (<button className="styled-button" onClick={() => this.props.history.push("/settings/edit-profile") }>Edit Profile</button>) :
             (<button className="styled-button red">Follow</button>);
 
+        const pronounText = user.pronouns ? (<h5>{user.pronouns}</h5>) : null;
+        const shortBio = user.short_bio ? ` · ${user.short_bio}` : "";
+        console.log(shortBio);
+
         return (
             <main>
                 <header className="user-show-header">
                     {getUserIconLarge(user)}
                     <h1>{user.display_name}</h1>
-                    <h5>@{user.username}</h5>
+                    {pronounText}
+                    <br />
+                    <h5>@{user.username}{shortBio}</h5>
                     <h6>X followers &#183; X following</h6>
                     {actionButton}
                 </header>

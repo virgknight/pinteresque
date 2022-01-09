@@ -6,7 +6,7 @@
 .user-show-header h1 {
     font-weight: 700;
     font-size: 36px;
-    margin: 10px;
+    margin-top: 10px;
 }
 
 .user-show-header h5, .edit-form h5 {
@@ -76,6 +76,12 @@
     font-weight: 700;
     font-size: 28px;
     padding-bottom: 10px;
+}
+
+.edit-form h2 {
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.3px;
 }
 
 .edit-profile {
@@ -150,16 +156,15 @@ footer {
     display: block;
     width: 100%;
     background-color: white;
+    text-align: center;
+    padding: 5px;
 }
 
-.button-flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+button.edit-button {
+    padding: 14px;
+    border-radius: 24px;
 }
 
 footer button.styled-button {
-    padding: 14px;
-    border-radius: 24px;
     color: #767676;
 }

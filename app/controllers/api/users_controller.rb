@@ -15,7 +15,7 @@ class Api::UsersController < ApplicationController
 
         if @user.id == demo_user.id
             render json: ["Cmon now, don't mess with my project. You know you can't update the demo user."], status: 403
-        elsif @user.update_attributes(user_params)
+        elsif @user.update(user_params)
             render :show
         else
             render json: @user.errors.full_messages, status: 422

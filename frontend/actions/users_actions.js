@@ -1,7 +1,8 @@
-import { fetchOtherUser, updateUser, getUserPins } from "../util/user_util";
+import { fetchOtherUser, updateUser, deleteUser, getUserPins } from "../util/user_util";
 import { receiveCurrentUser } from "./session_actions";
 
 export const RECEIVE_OTHER_USER = "RECEIVE_OTHER_USER";
+export const REMOVE_USER = "REMOVE_USER";
 export const RECEIVE_USER_PINS = "RECEIVE_USER_PINS";
 export const RECEIVE_USER_ERRORS = "RECEIVE_USER_ERRORS";
 export const CLEAR_USER_ERRORS = "CLEAR_USER_ERRORS";
@@ -9,6 +10,11 @@ export const CLEAR_USER_ERRORS = "CLEAR_USER_ERRORS";
 const receiveOtherUser = user => ({
     type: RECEIVE_OTHER_USER,
     user
+})
+
+const removeUser = userId => ({
+    type: REMOVE_USER,
+    userId
 })
 
 export const receiveUserErrors = errors => ({
@@ -28,6 +34,10 @@ export const updateCurrentUser = user => dispatch => (
     updateUser(user).then(
         (user) => dispatch(receiveCurrentUser(user)),
         (errors) => dispatch(receiveUserErrors(errors.responseJSON)))
+);
+
+export const deleteCurrentUser = userId => dispatch => (
+    deleteUser(userId).then(() => dispatch(removeUser(userId)))
 );
 
 // NOTE: this action updates the pin slice of state, not the user SoS!

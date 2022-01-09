@@ -41,9 +41,18 @@ export const updateUser = (user) => (
     $.ajax({
         url: `/api/users/${user.id}`,
         method: "PATCH",
-        data: { user }
+        data: user,
+        contentType: false,
+        processData: false
     })
 );
+
+export const deleteUser = userId => (
+    $.ajax({
+        url: `/api/users/${userId}`,
+        method: "DELETE"
+    })
+)
 
 export const getUserPins = userId => (
     $.ajax({

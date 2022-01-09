@@ -1,5 +1,5 @@
 import React from "react";
-import EditProfileFooter from "./edit_profile-footer";
+import EditProfileFooter from "./edit_profile_footer";
 
 class EditProfileForm extends React.Component {
     constructor(props) {
@@ -56,24 +56,23 @@ class EditProfileForm extends React.Component {
         formData.append("user[username]", this.state.username);
 
         this.props.updateCurrentUser(formData)
-            .then(({ user }) => this.props.history.push(`/users/${user.id}/_saved`));
+            .then(({ currentUser }) => this.props.history.push(`/users/${currentUser.id}/_saved`));
     }
 
     render () {
-        const {currentUser} = this.props;
+        const {currentUser, errors} = this.props;
 
         let pronounOptions = ["ey/em", "he/him", "ne/nem", "she/her", "they/them", "ve/ver"];
-        if (!this.props.pronouns) pronounOptions = ["Add your pronouns", ...pronounOptions]
+        if (!this.props.pronouns) pronounOptions = ["Add your pronouns", ...pronounOptions];
 
         return (
         <main className="edit-form">
-            {/* TEMP CODE */}
-            {this.props.errors.map((error) => (<p className="error">{error}</p>))}
-
             <h1>Public Profile</h1>
             <h5>People visiting your profile will see the following info</h5>
 
             <form className="edit-profile">
+                {errors.map((error) => (<p className="error">{error}</p>))}
+
                 <label>Photo</label>
                 <section className="edit-flex">
                     {this.props.getUserIcon(currentUser)}
@@ -131,7 +130,7 @@ class EditProfileForm extends React.Component {
                 </div>
             </div>
 
-            <EditProfileFooter handleSubmit={this.handleSubmit} madeUpdate={this.state.madeUpdate}/>
+            <EditProfileFooter handleSubmit={this.handleSubmit} madeUpdate={this.state.madeUpdate} />
         </main>
         );
     }
