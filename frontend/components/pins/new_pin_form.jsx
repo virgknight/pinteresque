@@ -9,12 +9,17 @@ class NewPinForm extends React.Component {
             owner_id: this.props.currentUser.id,
             title: "",
             alt_text: "",
-            photoFile: null
+            photoFile: null,
+            noPhotoError: null
         };
 
         this.update = this.update.bind(this);
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount () {
+        this.props.clearPinErrors();
     }
 
     update(type) {
@@ -30,7 +35,10 @@ class NewPinForm extends React.Component {
     handleSubmit (e) {
         e.preventDefault();
 
-        if (!this.state.photoFile) return;
+        if (!this.state.photoFile) {
+            this.setState({noPhotoError: (<p className="error">Every Pin needs a photo! Please upload a photo before proceeding.</p>)});
+            return;
+        }
 
         const formData = new FormData();
         formData.append("pin[title]", this.state.title);
@@ -43,7 +51,8 @@ class NewPinForm extends React.Component {
     }
 
     render () {
-        const {currentUser} = this.props;
+        const {currentUser, errors} = this.props;
+        
         return (
             <div className="np-form-background">
                 <form id="new-pin-form">
@@ -62,6 +71,8 @@ class NewPinForm extends React.Component {
                     </div>
 
                     <div className="photo-info-container">
+                        {this.state.noPhotoError}
+                        {errors.map((error,i) => (<p key={`err${i}`} className="error">{error}</p>))}
                         <input className="np-title"
                             type="text" 
                             value={this.state.title}
