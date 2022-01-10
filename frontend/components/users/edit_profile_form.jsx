@@ -56,7 +56,10 @@ class EditProfileForm extends React.Component {
         formData.append("user[username]", this.state.username);
 
         this.props.updateCurrentUser(formData)
-            .then(({ currentUser }) => this.props.history.push(`/users/${currentUser.id}/_saved`));
+            .then(({ currentUser }) => {
+                this.props.notify();
+                this.props.history.push(`/users/${currentUser.id}/_saved`);
+            });
     }
 
     render () {

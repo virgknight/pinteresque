@@ -9,11 +9,19 @@ const Notification = ({notification}) => {
         case 'copied':
             message = "Copied link to your clipboard to share";
             break;
+        case "pin updated":
+            message = "Your Pin has been updated!";
+            break;
+        case "pin deleted":
+            message = "Your Pin has been deleted";
+            break;
+        case "user updated":
+            message = "Your profile information has been updated!";
+            break;
         default:
-            message = "";
+            return null;
     }
 
-    debugger;
     return (
         <div className="notification-modal">
             {message}

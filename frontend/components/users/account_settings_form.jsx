@@ -34,7 +34,10 @@ class AccountSettingsForm extends React.Component {
         e.preventDefault();
         const userParams = (({email, password}) => ({email, password}))(this.state);
         this.props.updateCurrentUser(userParams)
-            .then(({ currentUser }) => this.props.history.push(`/users/${currentUser.id}/_saved`));
+            .then(({ currentUser }) => {
+                this.props.notify();
+                this.props.history.push(`/users/${currentUser.id}/_saved`);
+            });
     }
 
     handleDelete(e) {

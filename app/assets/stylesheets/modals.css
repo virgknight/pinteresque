@@ -206,4 +206,20 @@ img.edit-preview {
   padding: 30px;
   border-radius: 30px;
   z-index: 1000;
+  animation: notification-poof 3s;
+}
+
+@keyframes notification-poof {
+    0% {
+        opacity: 1;
+        transform: scale(1) translate(-50%, 0%);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(1) translate(-50%, 0%);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.3) translate(-35%, 0%);
+    }
 }

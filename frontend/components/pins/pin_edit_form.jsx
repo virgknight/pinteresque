@@ -53,13 +53,19 @@ class PinEditForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.updatePin(this.state)
-            .then(() => this.returnToPinShow());
+            .then(() => {
+                this.props.notify("pin updated");
+                this.returnToPinShow();
+            });
     }
 
     handleDelete(e) {
         e.preventDefault();
         this.props.deletePin(this.state.id)
-            .then(() => this.props.history.go(-2));
+            .then(() => {
+                this.props.notify("pin deleted");
+                this.props.history.go(-2);
+            });
             // reroutes user to last visited page before pin show
     }
 
