@@ -1,0 +1,1 @@
+json.extract! boardspin, :id, :board_id, :pin_id

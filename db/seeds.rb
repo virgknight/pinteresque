@@ -8,6 +8,8 @@
 
 User.destroy_all
 Pin.destroy_all
+Board.destroy_all
+BoardsPin.destroy_all
 
 require 'open-uri'
 
@@ -122,3 +124,11 @@ pin24.photo.attach(io: photo24, filename: "brown-kitten.jpeg");
 pin25 = Pin.create!(owner_id: demo_user.id, title: "hi friend");
 photo25 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/alpaca.jpeg");
 pin25.photo.attach(io: photo25, filename: "alpaca.jpeg");
+
+
+### Boards
+board1 = Board.create!(owner_id: demo_user.id, name: "my favorite animals", description: "these animals are just the best");
+bp1 = BoardsPin.create!(pin_id: pin22.id, board_id: board1.id);
+bp2 = BoardsPin.create!(pin_id: pin23.id, board_id: board1.id);
+bp3 = BoardsPin.create!(pin_id: pin24.id, board_id: board1.id);
+bp4 = BoardsPin.create!(pin_id: pin25.id, board_id: board1.id);

@@ -6,10 +6,11 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :update, :destroy]
     get 'users/other/:id', to: 'users#show_other'
     get 'users/:id/pins', to: 'users#index_pins'
+    get 'users/:id/boards', to: 'users#index_boards'
 
     resources :pins, except: [:new, :edit]
-    resources :boards, except: [:new, :edit]
-    resources :boards_pins, only: [:create, :destroy, :index] # need show too?
+    resources :boards, except: [:new, :edit, :index]
+    resources :boards_pins, only: [:create, :destroy, :index]
     resource :session, only: [:create, :destroy]
   end
 end
