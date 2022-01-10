@@ -27,3 +27,10 @@ export const deleteBoard = boardId => (
         method: "DELETE"
     })
 );
+
+export const getBoardPins = boardId => (
+    $.ajax({
+        url: `/api/boards/${boardId}/pins`,
+        method: "GET"
+    })
+)

@@ -81,7 +81,7 @@ class PinEditForm extends React.Component {
         <div className="modal edit-modal" onClick={this.escape}>
             <form className="edit-pin-modal modal-content">
                 <h2 className="formtitle">Edit this Pin</h2>
-                {hasErrors ? (<p className="error">All pins must have a title!</p>) : null}
+                {hasErrors ? (<p className="error">All Pins must have a title!</p>) : null}
 
                 <div className="formbody">
                     <table className="edit-inputs">

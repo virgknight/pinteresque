@@ -101,6 +101,13 @@ button.back-button:hover {
     background-color: #efefef;
 }
 
+.ps-more > p {
+    font-weight: lighter;
+    font-size: 12px;
+    padding: 4px 4px 10px 4px;
+    text-align: left;
+}
+
 .ps-nav-icons svg {
     cursor: pointer;
     padding: 10px;

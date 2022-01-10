@@ -1,0 +1,78 @@
+.board-title-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.board-title-flex svg {
+    padding: 3px;
+    border-radius: 50%;
+    background-color: #efefef;
+    cursor: pointer;
+}
+
+.board-title-flex svg:hover {
+    background-color: lightgray;
+}
+
+.board-title-flex h1 {
+    margin: 10px;
+}
+
+/* Board options modal */
+#board-show-options {
+    position: relative;
+    top: 145px;
+    left: 60%;
+}
+
+/* Board edit modal */
+.edit-board-modal {
+  width: 480px;
+  top: 15px;
+}
+
+.modal-content.edit-board-modal {
+    align-items: flex-start;
+    padding: 30px;
+}
+
+.edit-board-modal h2 {
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.edit-board-modal label {
+    display: block;
+    font-weight: lighter;
+    font-size: 12px;
+}
+
+textarea, .edit-board-modal input {
+    width: 460px;
+}
+
+textarea {
+    height: 125px;
+    border-radius: 16px;
+    border: 2px solid lightgray;
+    margin: 10px 0px 10px 0px;
+    padding: 7px 10px 7px 10px;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: black;
+}
+
+div.delete-board {
+    text-align: left;
+    margin-right: 190px;
+    width: 200px;
+}
+
+div.delete-board h5 {
+    padding: 2px;
+}
+
+.edit-board-modal .form-footer {
+    justify-content: right;
+}

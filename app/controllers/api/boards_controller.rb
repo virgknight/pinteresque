@@ -31,8 +31,12 @@ class Api::BoardsController < ApplicationController
         end
     end
 
+    def index_pins
+        @board = Board.includes(:pins).find(params[:id])
+    end
+
     protected
     def board_params
-        params.require(:user).permit(:owner_id, :name, :description)
+        params.require(:board).permit(:owner_id, :name, :description)
     end
 end

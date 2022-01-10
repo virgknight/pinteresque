@@ -14,8 +14,12 @@ import pinEditFormContainer from "./pins/pin_edit_form_container";
 import pinShowContainer from "./pins/pin-show-container";
 import newPinFormContainer from "./pins/new_pin_form_container";
 
+import boardShowContainer from "./boards/board_show_container";
+import boardEditFormContainer from "./boards/board_edit_form_container";
+
 import userShowContainer from "./users/user_show_container";
 import userCreatedContainer from "./users/user_created_container";
+import userSavedContainer from "./users/user_saved_container";
 import UserSettingsNav from "./users/user_settings_nav";
 import editProfileContainer from "./users/edit_profile_form_container";
 import accountSettingsFormContainer from "./users/account_settings_form_container";
@@ -40,8 +44,13 @@ const App = () => (
         <ProtectedRoute path="/pins/:pinId" component={pinShowContainer} />
         <ProtectedRoute path="/pin-builder" component={newPinFormContainer} />
 
+        <ProtectedRoute path="/boards/:boardId" component={boardShowContainer} />
+        <ProtectedRoute path="/boards/:boardId/edit" component={boardEditFormContainer} />
+
         <ProtectedRoute path="/users/:userId" component={userShowContainer} />
         <ProtectedRoute path="/users/:userId/_created" component={userCreatedContainer} />
+        <ProtectedRoute path="/users/:userId/_saved" component={userSavedContainer} />
+        {/* <ProtectedRoute path="/users/:userId/_saved/board-builder" component={} /> */}
         <ProtectedRoute path="/settings" component={UserSettingsNav} />
         <ProtectedRoute path="/settings/edit-profile" component={editProfileContainer} />
         <ProtectedRoute path="/settings/account-settings" component={accountSettingsFormContainer} />

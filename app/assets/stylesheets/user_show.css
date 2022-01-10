@@ -1,26 +1,26 @@
-.user-show-header {
+.show-header {
     text-align: center;
     padding-top: 20px;
 }
 
-.user-show-header h1 {
+.show-header h1 {
     font-weight: 700;
     font-size: 36px;
     margin-top: 10px;
 }
 
-.user-show-header h5, .edit-form h5 {
+.show-header h5, .edit-form h5 {
     font-weight: lighter;
     font-size: 16px;
 }
 
-.user-show-header h6 {
+.show-header h6 {
     font-weight: 600;
     font-size: 16px;
     margin: 8px;
 }
 
-.user-show-header button {
+.show-header button {
     padding: 14px;
 }
 
@@ -167,4 +167,38 @@ button.edit-button {
 
 footer button.styled-button {
     color: #767676;
+}
+
+/* header menu to add a pin or board */
+#create-menu-button {
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+}
+
+#create-menu-button:hover {
+    background-color: lightgray;
+}
+
+#create-menu-button.black {
+    background-color: white;
+    filter: invert(100%);
+}
+
+#user-create-options {
+    position: absolute;
+    top: 520px;
+    left: 88vw;
+}
+
+#user-create-options a {
+    display: block;
+    padding: 5px 2px 5px 2px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#user-create-options a:hover {
+    background-color: #efefef;
 }

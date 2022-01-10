@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
     resources :pins, except: [:new, :edit]
     resources :boards, except: [:new, :edit, :index]
+    get 'boards/:id/pins', to: "boards#index_pins"
     resources :boards_pins, only: [:create, :destroy, :index]
     resource :session, only: [:create, :destroy]
   end

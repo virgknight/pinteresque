@@ -4,6 +4,7 @@ export const RECEIVE_BOARD = "RECEIVE_BOARD";
 export const REMOVE_BOARD = "REMOVE_BOARD";
 export const RECEIVE_BOARD_ERRORS = "RECEIVE_BOARD_ERRORS";
 export const CLEAR_BOARD_ERRORS = "CLEAR_BOARD_ERRORS";
+export const RECEIVE_BOARD_PINS = "RECEIVE_BOARD_PINS";
 
 const receiveBoard = board => ({
     type: RECEIVE_BOARD,
@@ -28,13 +29,13 @@ export const requestBoard = boardId => dispatch => (
     ApiBoardsUtil.fetchBoard(boardId).then((board) => dispatch(receiveBoard(board)))
 );
 
-export const createBoard = board => dispatch (
+export const createBoard = board => dispatch => (
     ApiBoardsUtil.createBoard(board).then(
         (board) => dispatch(receiveBoard(board)),
         (errors) => dispatch(receiveBoardErrors(errors.responseJSON)))
 );
 
-export const updateBoard = board => dispatch(
+export const updateBoard = board => dispatch => (
     ApiBoardsUtil.updateBoard(board).then(
         (board) => dispatch(receiveBoard(board)),
         (errors) => dispatch(receiveBoardErrors(errors.responseJSON)))
@@ -43,3 +44,14 @@ export const updateBoard = board => dispatch(
 export const deleteBoard = boardId => dispatch => (
     ApiBoardsUtil.deleteBoard(boardId).then(() => dispatch(removeBoard(boardId)))
 );
+
+
+// NOTE: this action updates the pin slice of state, not the board SoS!
+const receiveBoardPins = pins => ({
+    type: RECEIVE_BOARD_PINS,
+    pins
+})
+
+export const requestBoardPins = boardId => dispatch => (
+    ApiBoardsUtil.getBoardPins(boardId).then((pins) => dispatch(receiveBoardPins(pins)))
+)

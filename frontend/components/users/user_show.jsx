@@ -10,18 +10,17 @@ class UserShow extends React.Component {
         const { user, currentUser, getUserIconLarge } = this.props;
 
         if (!user) return null;
-
+        
         const actionButton = (user.id === currentUser.id) ? 
             (<button className="styled-button" onClick={() => this.props.history.push("/settings/edit-profile") }>Edit Profile</button>) :
             (<button className="styled-button red">Follow</button>);
 
         const pronounText = user.pronouns ? (<h5>{user.pronouns}</h5>) : null;
         const shortBio = user.short_bio ? ` · ${user.short_bio}` : "";
-        console.log(shortBio);
 
         return (
             <main>
-                <header className="user-show-header">
+                <header className="show-header">
                     {getUserIconLarge(user)}
                     <h1>{user.display_name}</h1>
                     {pronounText}

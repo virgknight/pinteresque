@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import SmsIcon from '@mui/icons-material/Sms';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import MenuDropdown from "./menu_dropdown";
 
@@ -28,8 +28,16 @@ class NavBarLinks extends React.Component {
                     <SearchIcon sx={{ color: "gray"}}/>
                     <input className="search-input" type="text" placeholder="Search"/>
                 </div>
-                <div className="notification-bell nav-icon"><NotificationsIcon sx={{ fontSize: 30, color: "gray" }}/></div>
-                <div className="inbox-icon nav-icon"><SmsIcon sx={{ fontSize: 30, color: "gray" }} /></div>
+                <div className="nav-icon">
+                    <Link to="https://github.com/virgknight/pinteresque">
+                        <GitHubIcon sx={{ fontSize: 30, color: "gray" }} />
+                    </Link>
+                </div>
+                <div className="nav-icon">
+                    <Link to="https://www.linkedin.com/in/virginia-knight-2a75aaa6/">
+                        <LinkedInIcon sx={{ fontSize: 38, color: "gray" }}/>
+                    </Link>
+                </div>
                 <div className="profile-icon nav-icon">
                     <Link to={`/users/${currentUser.id}/_saved`}>
                         {this.props.getUserIconMini(currentUser)}

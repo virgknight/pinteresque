@@ -18,6 +18,12 @@ const Notification = ({notification}) => {
         case "user updated":
             message = "Your profile information has been updated!";
             break;
+        case "board updated":
+            message = "Board has been updated!";
+            break;
+        case "board deleted":
+            message = "Board has been deleted";
+            break;
         default:
             return null;
     }
