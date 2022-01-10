@@ -59,3 +59,10 @@ export const getUserPins = userId => (
         method: "GET"
     })
 )
+
+export const getUserBoards = userId => (
+    $.ajax({
+        url: `/api/users/${userId}/boards`,
+        method: "GET"
+    })
+)
