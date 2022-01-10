@@ -29,6 +29,11 @@ class User < ApplicationRecord
     foreign_key: :owner_id,
     class_name: :Pin
 
+    has_many :boards,
+    dependent: :destroy,
+    foreign_key: :owner_id,
+    class_name: :Board
+
     has_one_attached :avatar
 
     attr_reader :password

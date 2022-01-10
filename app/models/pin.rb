@@ -16,5 +16,12 @@ class Pin < ApplicationRecord
     foreign_key: :owner_id,
     class_name: :User
 
+    has_many :boardassignments,
+    class_name: :BoardsPin
+
+    has_many :boards,
+    through: :boardassignments,
+    source: :board
+
     has_one_attached :photo
 end

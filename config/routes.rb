@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     get 'users/:id/pins', to: 'users#index_pins'
 
     resources :pins, except: [:new, :edit]
+    resources :boards, except: [:new, :edit]
+    resources :boards_pins, only: [:create, :destroy, :index] # need show too?
     resource :session, only: [:create, :destroy]
   end
 end

@@ -19,9 +19,10 @@ class AccountSettingsForm extends React.Component {
         this.props.clearUserErrors();
     }
 
-    toggleModal() {
+    toggleModal(e) {
         const modal = document.getElementsByClassName("modal")[0];
         modal.classList.toggle("hidden");
+        e.stopPropagation();
     }
 
     update(type) {
