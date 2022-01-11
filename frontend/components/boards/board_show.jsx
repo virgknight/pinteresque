@@ -28,7 +28,7 @@ class BoardShow extends React.Component {
                 </div>
                 {getUserIcon(boardOwner)}
                 <h6>{boardOwner.display_name}</h6>
-                {board.description ? <h5>{board.description}</h5> : null}
+                {board.description ? <h5 className="board-desc">{board.description}</h5> : null}
                 {/* VKNOTE: add follower count in here when possible */}
                 <h6>X followers</h6>
                 <br />

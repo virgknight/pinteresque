@@ -42,6 +42,7 @@ class Api::UsersController < ApplicationController
 
     def index_boards
         @user = User.includes(:boards).find(params[:id])
+        @boards = @user.boards.includes(:pinassignments, :pins)
     end
 
     protected

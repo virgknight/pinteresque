@@ -1,4 +1,4 @@
-import { fetchOtherUser, updateUser, deleteUser, getUserPins } from "../util/user_util";
+import { fetchOtherUser, updateUser, deleteUser, getUserPins, getUserBoards } from "../util/user_util";
 import { receiveCurrentUser } from "./session_actions";
 
 export const RECEIVE_OTHER_USER = "RECEIVE_OTHER_USER";
@@ -51,12 +51,12 @@ export const requestUserPins = userId => dispatch => (
     getUserPins(userId).then((pins) => dispatch(receiveUserPins(pins)))
 )
 
-// NOTE: this action updates the board slice of state, not the user SoS!
-const receiveUserBoards = boards => ({
+// NOTE: this action updates the board/pin/board_pin slices of state, not the user SoS!
+const receiveUserBoards = payload => ({
     type: RECEIVE_USER_BOARDS,
-    boards
+    payload
 })
 
 export const requestUserBoards = userId => dispatch => (
-    getUserPins(userId).then((boards) => dispatch(receiveUserBoards(boards)))
+    getUserBoards(userId).then((payload) => dispatch(receiveUserBoards(payload)))
 )

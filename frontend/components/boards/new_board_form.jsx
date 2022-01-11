@@ -35,7 +35,7 @@ class NewBoardForm extends React.Component {
         this.props.createBoard(boardInfo)
             .then(({board}) => {
                 this.props.notify("board created");
-                this.props.history.push(`boards/${board.id}`);
+                this.props.history.push(`/boards/${board.id}`);
             });
     }
 

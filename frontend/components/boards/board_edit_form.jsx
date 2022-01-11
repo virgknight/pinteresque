@@ -66,9 +66,8 @@ class BoardEditForm extends React.Component {
         this.props.deleteBoard(this.state.id)
             .then(() => {
                 this.props.notify("board deleted");
-                this.props.history.go(-2);
+                this.props.history.push(`/users/${this.props.currentUser.id}/_saved`);
             });
-        // reroutes user to last visited page before board show
     }
 
     render() {

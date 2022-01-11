@@ -1,4 +1,5 @@
 import { REMOVE_SAVE, RECEIVE_SAVE, RECEIVE_ALL_SAVES } from "../actions/save_actions";
+import { RECEIVE_USER_BOARDS } from "../actions/users_actions";
 
 const defaultState = {};
 
@@ -14,6 +15,8 @@ const BoardsPinsReducer = (state = defaultState, action) => {
         case REMOVE_SAVE:
             delete newState[action.saveId];
             return newState;
+        case RECEIVE_USER_BOARDS:
+            return Object.assign(newState, action.payload.boards_pins);
         default:
             return state;
     }

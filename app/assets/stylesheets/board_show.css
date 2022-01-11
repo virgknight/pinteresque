@@ -81,3 +81,9 @@ div.delete-board h5 {
 .modal-content.edit-board-modal.new-board-modal {
     top: 10vw;
 }
+
+/* Make it so that if someone enters a long description, the text will wrap */
+.board-desc {
+    width: 30vw;
+    margin: 0 auto;
+}

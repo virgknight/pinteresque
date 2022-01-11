@@ -1,5 +1,6 @@
 import React from "react";
 import UserCreateMenu from "./user_create_menu";
+import BoardIndexContainer from "../boards/board_index_container";
 
 class UserSaved extends React.Component {
 
@@ -14,6 +15,8 @@ class UserSaved extends React.Component {
         return (
             <div>
                 { addBoard }
+                <br />
+                <BoardIndexContainer />
             </div>
         );
     }

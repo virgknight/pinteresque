@@ -1,0 +1,54 @@
+/* Text for index items */
+.board-index-item {
+    text-align: left;
+}
+
+.board-index-item h4 {
+    padding: 5px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.board-index-item p {
+    padding: 5px;
+    font-weight: lighter;
+    font-size: 12px;
+} 
+
+/* Board preview- mosaic of images */
+.board-preview-container {
+    display: flex;
+    align-items: center;
+}
+
+.board-preview-container .left, .board-preview-container .small-img {
+    padding: 0;
+    background-color: #efefef;
+    object-fit: cover;
+    border: 1px solid white;
+}
+
+.board-preview-container .left {
+    height: 160px;
+    width: 160px;
+    border-radius: 24px 0 0 24px;
+}
+
+.board-preview-container .small-img {
+    height: 79px;
+    width: 79px;
+}
+
+.board-preview-container .top-right {
+    border-radius: 0 24px 0 0;
+}
+
+.board-preview-container .bottom-right {
+    border-radius: 0 0 24px 0;
+}
+
+.board-preview-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
