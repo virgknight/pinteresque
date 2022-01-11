@@ -10,12 +10,16 @@ class BoardIndex extends React.Component {
     }
 
     render () {
-        const { user, boards, boards_pins, pins } = this.props;
+        const { currentUser, user, boards, boards_pins, pins } = this.props;
 
         if (!user) return null;
 
         // pull out user's boards
         const displayedBoards = Object.values(boards).reverse();
+
+        // boolean indicating whether the current user is viewing their own boards
+        // used to decide whether to display edit button on hover
+        const isCurrentUser = (currentUser.id === user.id);
 
         return (
             <div>
@@ -25,7 +29,8 @@ class BoardIndex extends React.Component {
                             {displayedBoards
                                 .filter((board, j) => (j % 5 === i))
                                 .map((board, j) => (
-                                    <BoardIndexItem key={`board-${j}`} board={board} boards_pins={boards_pins} pins={pins}/>
+                                    <BoardIndexItem key={`board-${j}`} board={board} 
+                                        boards_pins={boards_pins} pins={pins} isCurrentUser={isCurrentUser}/>
                                 ))}
                         </div>
                     ))}

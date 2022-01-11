@@ -3,6 +3,10 @@
     text-align: left;
 }
 
+.board-index-item:hover {
+    filter: brightness(90%);
+}
+
 .board-index-item h4 {
     padding: 5px;
     font-weight: 700;
@@ -15,7 +19,7 @@
     font-size: 12px;
 } 
 
-/* Board preview- mosaic of images */
+/* Board preview (mosaic of images) */
 .board-preview-container {
     display: flex;
     align-items: center;
@@ -51,4 +55,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* if current user hovers their own board, shortcut edit button appears */
+.edit-board-shortcut {
+    position: absolute;
+    right: 8px;
+    bottom: 60px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 3px;
+    display: none;
+}
+
+.edit-board-shortcut:hover {
+    background-color: lightgray;
+}
+
+.board-index-item:hover .edit-board-shortcut {
+    display: block;
 }
