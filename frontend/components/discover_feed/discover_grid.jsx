@@ -92,7 +92,7 @@ class DiscoverGrid extends React.Component {
     }
 
     render () {
-        if (this.props.pins.length === 0) return (<h1 className="header-text" style={{textAlign: "center"}}>No Pins yet!</h1>);
+        if (this.props.pins.length === 0) return (<h1 className="header-text" style={{textAlign: "center", fontWeight: "lighter"}}>There aren't any Pins yet</h1>);
 
         return (
             <main className="pin-index">

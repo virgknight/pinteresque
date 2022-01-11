@@ -18,6 +18,9 @@ const Notification = ({notification}) => {
         case "user updated":
             message = "Your profile information has been updated!";
             break;
+        case "board created":
+            message = "Your new board has been created!";
+            break;
         case "board updated":
             message = "Board has been updated!";
             break;

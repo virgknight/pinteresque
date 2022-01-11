@@ -76,3 +76,8 @@ div.delete-board h5 {
 .edit-board-modal .form-footer {
     justify-content: right;
 }
+
+/* new board modal- just wanna move this guy down a bit to match Pinterest */
+.modal-content.edit-board-modal.new-board-modal {
+    top: 10vw;
+}

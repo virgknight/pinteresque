@@ -20,6 +20,7 @@ import boardEditFormContainer from "./boards/board_edit_form_container";
 import userShowContainer from "./users/user_show_container";
 import userCreatedContainer from "./users/user_created_container";
 import userSavedContainer from "./users/user_saved_container";
+import newBoardFormContainer from "./boards/new_board_form_container";
 import UserSettingsNav from "./users/user_settings_nav";
 import editProfileContainer from "./users/edit_profile_form_container";
 import accountSettingsFormContainer from "./users/account_settings_form_container";
@@ -50,7 +51,7 @@ const App = () => (
         <ProtectedRoute path="/users/:userId" component={userShowContainer} />
         <ProtectedRoute path="/users/:userId/_created" component={userCreatedContainer} />
         <ProtectedRoute path="/users/:userId/_saved" component={userSavedContainer} />
-        {/* <ProtectedRoute path="/users/:userId/_saved/board-builder" component={} /> */}
+        <ProtectedRoute path="/users/:userId/_saved/board-builder" component={newBoardFormContainer} />
         <ProtectedRoute path="/settings" component={UserSettingsNav} />
         <ProtectedRoute path="/settings/edit-profile" component={editProfileContainer} />
         <ProtectedRoute path="/settings/account-settings" component={accountSettingsFormContainer} />

@@ -28,8 +28,7 @@ class UserCreateMenu extends React.Component {
 
                 <div onClick={this.hide}
                     className={this.state.appear ? "ps-navbutton modal" : "hidden ps-navbutton modal"}>
-                    <ul onClick={e => e.stopPropagation()}
-                        className="ps-more shadowed" id="user-create-options">
+                    <ul className="ps-more shadowed" id="user-create-options">
                         <p>Create</p>
                         <Link to="/pin-builder">Pin</Link>
                         <Link to={`/users/${this.props.currentUser.id}/_saved/board-builder`}>Board</Link>
