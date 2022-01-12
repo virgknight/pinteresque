@@ -10,7 +10,15 @@ class UserShow extends React.Component {
 
     componentDidMount () {
         this.props.requestOtherUser(this.props.match.params.userId)
-            .then(({ user }) => this.props.requestUserFollows(user.id));
+            .then(({ user }) => {
+                this.props.requestUserFollows(user.id);
+                this.props.requestUserFollowing(user.id);
+            });
+    }
+
+    filterFollowing() {
+        const { user } = this.props;
+        return Object.values(this.props.follows).filter((follow) => follow.follower_id === user.id);
     }
 
     filterFollows () {
@@ -51,6 +59,7 @@ class UserShow extends React.Component {
         const shortBio = user.short_bio ? ` · ${user.short_bio}` : "";
         const followerCount = this.filterFollows().length;
         const followOrFollows = followerCount === 1 ? "follower" : "followers";
+        const followingCount = this.filterFollowing().length;
 
         return (
             <main>
@@ -61,7 +70,7 @@ class UserShow extends React.Component {
                     <br />
                     <h5>@{user.username}{shortBio}</h5>
                     {/* Followers/Following counts */}
-                    <h6>{followerCount} {followOrFollows} &#183; X following</h6>
+                    <h6>{followerCount} {followOrFollows} &#183; {followingCount} following</h6>
                     {actionButton}
                 </header>
                 <section id="created-saved-bar">
