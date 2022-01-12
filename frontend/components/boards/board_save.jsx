@@ -23,10 +23,11 @@ class BoardSave extends React.Component {
     // Run this when viewing a pins index
     componentDidMount () {
         if (this.props.boards && !this.retreivedBoards && this.props.indexView) {
-            this.currUserBoards = Object.values(this.props.boards)
+            const currUserBoardsRaw = Object.values(this.props.boards)
                 .filter((board) => board.owner_id === this.props.currentUser.id)
                 .sort((a, b) => (a.name > b.name) ? 1 : -1);
-            this.setState({ board_id: this.currUserBoards[0].id });
+            this.currUserBoards = currUserBoardsRaw;
+            this.setState({ board_id: currUserBoardsRaw[0].id });
             this.retreivedBoards = true;
         }
     }
@@ -35,10 +36,11 @@ class BoardSave extends React.Component {
     // Not very DRY. How to avoid this??
     componentDidUpdate () {
         if (this.props.boards && !this.retreivedBoards && !this.props.indexView) {
-            this.currUserBoards = Object.values(this.props.boards)
+            const currUserBoardsRaw = Object.values(this.props.boards)
                 .filter((board) => board.owner_id === this.props.currentUser.id)
                 .sort((a, b) => (a.name > b.name) ? 1 : -1);
-            this.setState({ board_id: this.currUserBoards[0].id });
+            this.currUserBoards = currUserBoardsRaw;
+            this.setState({ board_id: currUserBoardsRaw[0].id });
             this.retreivedBoards = true;
         }
     }
