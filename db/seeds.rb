@@ -10,6 +10,7 @@ User.destroy_all
 Pin.destroy_all
 Board.destroy_all
 BoardsPin.destroy_all
+Follow.destroy_all
 
 require 'open-uri'
 
@@ -137,3 +138,21 @@ board2 = Board.create!(owner_id: demo_user.id, name: "food", description: "is it
 bp5 = BoardsPin.create!(pin_id: pin8.id, board_id: board2.id);
 bp6 = BoardsPin.create!(pin_id: pin4.id, board_id: board2.id);
 bp7 = BoardsPin.create!(pin_id: pin2.id, board_id: board2.id);
+bp8 = BoardsPin.create!(pin_id: pin1.id, board_id: board2.id);
+bp9 = BoardsPin.create!(pin_id: pin6.id, board_id: board2.id);
+bp10 = BoardsPin.create!(pin_id: pin5.id, board_id: board2.id);
+bp11 = BoardsPin.create!(pin_id: pin3.id, board_id: board2.id);
+
+board3 = Board.create!(owner_id: user2.id, name: "anti memes");
+bp12 = BoardsPin.create!(pin_id: pin21.id, board_id: board3.id);
+bp13 = BoardsPin.create!(pin_id: pin18.id, board_id: board3.id);
+bp14 = BoardsPin.create!(pin_id: pin20.id, board_id: board3.id);
+
+### Follows
+follow1 = Follow.create!(follower_id: user1.id, followable_id: board2.id, followable_type: "Board");
+follow2 = Follow.create!(follower_id: demo_user.id, followable_id: board3.id, followable_type: "Board");
+follow3 = Follow.create!(follower_id: user2.id, followable_id: demo_user.id, followable_type: "User");
+follow4 = Follow.create!(follower_id: demo_user.id, followable_id: user2.id, followable_type: "User");
+follow5 = Follow.create!(follower_id: user1.id, followable_id: user2.id, followable_type: "User");
+follow6 = Follow.create!(follower_id: demo_user.id, followable_id: user1.id, followable_type: "User");
+follow7 = Follow.create!(follower_id: user2.id, followable_id: user1.id, followable_type: "User");

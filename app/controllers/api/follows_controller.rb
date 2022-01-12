@@ -31,6 +31,5 @@ class Api::FollowsController < ApplicationController
     protected
     def follow_params
         {follower_id: current_user.id, followable_id: @followable.id, followable_type: @followable.class.to_s}
-        # params.require(:follow).permit(:follower_id, :followable_id, :followable_type)
     end
 end
