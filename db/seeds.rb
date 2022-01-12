@@ -132,3 +132,8 @@ bp1 = BoardsPin.create!(pin_id: pin22.id, board_id: board1.id);
 bp2 = BoardsPin.create!(pin_id: pin23.id, board_id: board1.id);
 bp3 = BoardsPin.create!(pin_id: pin24.id, board_id: board1.id);
 bp4 = BoardsPin.create!(pin_id: pin25.id, board_id: board1.id);
+
+board2 = Board.create!(owner_id: demo_user.id, name: "food", description: "is it lunchtime yet?");
+bp5 = BoardsPin.create!(pin_id: pin8.id, board_id: board2.id);
+bp6 = BoardsPin.create!(pin_id: pin4.id, board_id: board2.id);
+bp7 = BoardsPin.create!(pin_id: pin2.id, board_id: board2.id);
