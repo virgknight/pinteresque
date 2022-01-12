@@ -34,6 +34,13 @@ class User < ApplicationRecord
     foreign_key: :owner_id,
     class_name: :Board
 
+    has_many :follows,
+    dependent: :destroy,
+    foreign_key: :follower_id,
+    class_name: :Follow
+
+    has_many :followers, as: :followable
+
     has_one_attached :avatar
 
     attr_reader :password

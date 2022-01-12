@@ -26,6 +26,8 @@ class Board < ApplicationRecord
     through: :pinassignments,
     source: :pin
 
+    has_many :followers, as: :followable
+
     def default_to_public
         self.private ||= false
     end
