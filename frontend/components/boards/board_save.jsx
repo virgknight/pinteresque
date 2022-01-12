@@ -11,6 +11,7 @@ class BoardSave extends React.Component {
             displayedBoardIndex: 0,
             menuOpen: false
         };
+        this.retreivedBoards = false;
         this.currUserBoards = null;
         this.pinSaves = null;
         this.toggleMenu = this.toggleMenu.bind(this);
@@ -19,14 +20,27 @@ class BoardSave extends React.Component {
         this.handleUnsave = this.handleUnsave.bind(this);
     }
 
+    // Run this when viewing a pins index
     componentDidMount () {
-        this.props.requestAllSaves();
-        // Get alphabetical array of current users boards, setting selection to the first
-        this.props.requestCurrentUserBoards().then(({boards}) => {
-            this.currUserBoards = Object.values(boards).sort((a, b) => (a.name > b.name) ? 1 : -1);
-            this.setState({ board_id: this.currUserBoards[0].id})
-            }
-        );
+        if (this.props.boards && !this.retreivedBoards && this.props.indexView) {
+            this.currUserBoards = Object.values(this.props.boards)
+                .filter((board) => board.owner_id === this.props.currentUser.id)
+                .sort((a, b) => (a.name > b.name) ? 1 : -1);
+            this.setState({ board_id: this.currUserBoards[0].id });
+            this.retreivedBoards = true;
+        }
+    }
+
+    // Run this when viewing a pins show
+    // Not very DRY. How to avoid this??
+    componentDidUpdate () {
+        if (this.props.boards && !this.retreivedBoards && !this.props.indexView) {
+            this.currUserBoards = Object.values(this.props.boards)
+                .filter((board) => board.owner_id === this.props.currentUser.id)
+                .sort((a, b) => (a.name > b.name) ? 1 : -1);
+            this.setState({ board_id: this.currUserBoards[0].id });
+            this.retreivedBoards = true;
+        }
     }
 
     toggleMenu (e) {

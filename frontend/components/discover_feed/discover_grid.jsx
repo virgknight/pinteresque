@@ -17,6 +17,11 @@ class DiscoverGrid extends React.Component {
         this.getNumOfImagesToAdd = this.getNumOfImagesToAdd.bind(this);
     }
 
+    componentDidMount () {
+        this.props.requestAllSaves();
+        this.props.requestCurrentUserBoards();
+    }
+
     componentDidUpdate () {
         if (this.initialDisplayIncomplete) {
             this.createInitialDisplay();

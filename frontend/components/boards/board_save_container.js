@@ -6,10 +6,11 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import BoardSave from "./board_save";
 
-const mSTP = ({session, entities: {users, boards_pins}}, ownProps) => ({
+const mSTP = ({session, entities: {users, boards_pins, boards}}, ownProps) => ({
     currentUser: users[session.currentUserId],
     pinId: ownProps.pinId,
     boards_pins,
+    boards,
     indexView: ownProps.indexView
 });
 

@@ -17,6 +17,8 @@ class PinShow extends React.Component {
     componentDidMount () {
         this.props.requestPin(this.props.match.params.pinId)
             .then(({pin}) => this.props.requestOtherUser(pin.owner_id));
+        this.props.requestAllSaves();
+        this.props.requestCurrentUserBoards();
     }
 
     handleCopy (e) {
