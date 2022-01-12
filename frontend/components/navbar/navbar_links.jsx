@@ -9,14 +9,32 @@ import MenuDropdown from "./menu_dropdown";
 class NavBarLinks extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {searchQuery: ""};
+        this.state = {scrolled: false};
 
         this.toggleDropdown = this.toggleDropdown.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
+    }
+
+    componentDidMount () {
+        addEventListener("scroll", this.handleScroll);
+    }
+
+    componentWillUnmount() {
+        removeEventListener("scroll", this.handleScroll);
+        this.setState = () => { return; };
     }
 
     toggleDropdown() {
         let dropdown = document.getElementById("menu-dropdown");
         dropdown.classList.toggle("show");
+    }
+
+    handleScroll() {
+        if (window.scrollY > 1) {
+            this.setState({ scrolled: true })
+        } else if (window.scrollY <= 1) {
+            this.setState({ scrolled: false })
+        }
     }
 
     render () {
@@ -61,7 +79,7 @@ class NavBarLinks extends React.Component {
             </nav>
         );
 
-        return (<header id="main-header">
+        return (<header id="main-header" className={this.state.scrolled ? "scrolled" : ""}>
             <div className="header-elements"> 
                 <img src={window.round_logo} width="50" height="50" />
                 {currentUser ? 
