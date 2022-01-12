@@ -26,7 +26,6 @@ class BoardSave extends React.Component {
             const currUserBoardsRaw = Object.values(this.props.boards)
                 .filter((board) => board.owner_id === this.props.currentUser.id)
                 .sort((a, b) => (a.name > b.name) ? 1 : -1);
-            debugger;
             this.currUserBoards = currUserBoardsRaw;
             this.setState({ board_id: currUserBoardsRaw[0].id });
             this.retreivedBoards = true;
