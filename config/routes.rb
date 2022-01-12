@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :update, :destroy], shallow: true do
       resources :follows, only: [:create, :destroy, :index]
     end
+    get 'users/:id/following', to: 'follows#following'
     get 'users/other/:id', to: 'users#show_other'
     get 'users/:id/pins', to: 'users#index_pins'
     get 'users/:id/boards', to: 'users#index_boards'

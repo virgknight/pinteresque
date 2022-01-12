@@ -23,6 +23,10 @@ export const requestUserFollows = userId => dispatch => (
     ApiFollowUtil.fetchUserFollows(userId).then((follows) => dispatch(receiveManyFollows(follows)))
 );
 
+export const requestUserFollowing = userId => dispatch => (
+    ApiFollowUtil.fetchUserFollowing(userId).then((follows) => dispatch(receiveManyFollows(follows)))
+);
+
 export const requestBoardFollows = boardId => dispatch => (
     ApiFollowUtil.fetchBoardFollows(boardId).then((follows) => dispatch(receiveManyFollows(follows)))
 );
@@ -36,5 +40,5 @@ export const followBoard = boardId => dispatch => (
 );
 
 export const unfollow = followId => dispatch => (
-    ApiFollowUtil.unfollow.then(() => dispatch(removeFollow(followId)))
+    ApiFollowUtil.unfollow(followId).then(() => dispatch(removeFollow(followId)))
 )

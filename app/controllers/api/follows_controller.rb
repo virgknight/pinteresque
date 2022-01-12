@@ -28,6 +28,12 @@ class Api::FollowsController < ApplicationController
         render :show
     end
 
+    # Gets index of users/boards that the given user is following
+    def following
+        @follows = Follow.where(follower_id: params[:id])
+        render :index
+    end
+
     protected
     def follow_params
         {follower_id: current_user.id, followable_id: @followable.id, followable_type: @followable.class.to_s}

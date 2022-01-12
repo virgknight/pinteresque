@@ -10,6 +10,9 @@ class UserSaved extends React.Component {
 
     render () {
         const {user, currentUser} = this.props;
+
+        if (!user) return null;
+
         const addBoard = (user.id === currentUser.id) ? (<UserCreateMenu currentUser={currentUser} />) : null;
 
         return (

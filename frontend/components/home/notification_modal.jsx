@@ -33,6 +33,9 @@ const Notification = ({notification}) => {
         case "pin unsaved from board":
             message = "Removed from board";
             break;
+        case "user followed":
+            message = "You are now following this user!"; // real pinterest: "Following! Their created Pins will show up in your home feed!"
+            break;
         default:
             return null;
     }
