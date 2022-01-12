@@ -34,7 +34,7 @@ main.pin-index {
 }
 
 
-main.pin-index img {
+main.pin-index img.pin-index-img {
     max-width: 15vw;
     padding: 5px;
     border-radius: 24px;
@@ -50,7 +50,7 @@ div.pin-index-item {
     margin: 5px 0 35px 0;
 }
 
-div.pin-index-item:hover {
+div.pin-index-item:hover img {
     filter: brightness(70%);
 }
 
@@ -124,4 +124,25 @@ p.pin-alt {
 
 #help-modal {
     padding: 12px;
+}
+
+/* Save pin to board component- specific to pin index */
+
+.pin-index-item .board-save {
+    position: absolute;
+    display: none;
+}
+
+.pin-index-item:hover .board-save,  .pin-index-item .board-save.opened {
+    display: flex;
+    z-index: 10;
+}
+
+.pin-index-item .board-save h2 {
+    color: white;
+}
+
+.pin-index-item .board-save-list {
+  top: 50px;
+  right: -55px;
 }

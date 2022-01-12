@@ -40,13 +40,13 @@ button.back-button:hover {
 }
 
 #pin-show > img {
-    max-width: 35vw;
+    width: 35vw;
     border-radius: 18px 0 0 18px;
     object-fit: contain;
 }
 
 .pin-show-desc {
-    max-width: 35vw;
+    width: 35vw;
     padding: 25px;
 }
 
@@ -168,4 +168,62 @@ button.back-button:hover {
     padding: 16px;
     margin-left: 15px;
     width: 20vw;
+}
+
+/* Save to board menu */
+.board-save, .expander, .board-list-item, .board-list-name {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.board-save h2 {
+    font-weight: 700;
+    font-size: 16px;
+    padding: 12px;
+}
+
+.board-save-list {
+  z-index: 999;
+  position: absolute;
+  border-radius: 26px;
+  padding: 10px;
+  width: 340px;
+}
+
+.pin-show-nav .board-save-list {
+  top: 95px;
+  right: -30px;
+}
+
+.board-save-list h4 {
+    text-align: center;
+    font-weight: 700;
+    padding: 20px 0 20px 0;
+}
+
+.board-list-item {
+    justify-content: space-between;
+    border-radius: 12px;
+}
+
+.board-list-item:hover {
+    background-color: #efefef;
+}
+
+.styled-button.save-shortcut {
+    display: none;
+}
+
+.board-list-item:hover .save-shortcut {
+    display: inline-block;
+}
+
+.board-mini-image {
+    height: 48px;
+    width: 48px;
+    object-fit: cover;
+    background-color: #efefef;
+    border-radius: 8px;
+    margin: 8px;
 }

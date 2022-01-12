@@ -34,3 +34,10 @@ export const getBoardPins = boardId => (
         method: "GET"
     })
 )
+
+export const getCurrentUserBoards = () => (
+    $.ajax({
+        url: "api/currentuser/boards",
+        method: "GET"
+    })
+)

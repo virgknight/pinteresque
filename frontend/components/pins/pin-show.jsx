@@ -3,6 +3,7 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import IosShareIcon from '@mui/icons-material/IosShare';
 import LinkIcon from '@mui/icons-material/Link';
 
+import BoardSaveContainer from '../boards/board_save_container';
 import PinShowMore from "./pin_show_more";
 import PinOwnerInfo from "./pin_owner_info";
 import PinShowComment from "./pin-show-comment";
@@ -46,8 +47,7 @@ class PinShow extends React.Component {
                                     <IosShareIcon fontWeight="900" />
                                     <div onClick={this.handleCopy}><LinkIcon fontWeight="900" /></div>
                                 </div>
-                                {/* VKNOTE: Add save-to-board dropdown after boards have been created!!! */}
-                                <div className="board-save">(BoardSave component will go here)</div>
+                                <BoardSaveContainer pinId={pin.id} indexView={false} />
                             </div>
 
                             <h3>{pin.title}</h3>

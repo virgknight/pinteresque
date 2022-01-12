@@ -27,6 +27,12 @@ const Notification = ({notification}) => {
         case "board deleted":
             message = "Board has been deleted";
             break;
+        case "pin saved to board":
+            message = "Saved to board!";
+            break;
+        case "pin unsaved from board":
+            message = "Removed from board";
+            break;
         default:
             return null;
     }

@@ -101,7 +101,7 @@ class DiscoverGrid extends React.Component {
                         {this.state.displayedPins
                             .filter((pin, j) => (j % 5 === i))
                             .map((pin, j) => (
-                                <GridIndexItem key={`img-${j}`} pin={pin} />
+                                <GridIndexItem key={`img-${j}`} pin={pin} history={this.props.history}/>
                             ))}
                     </div>
                 ))}

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :pins, except: [:new, :edit]
     resources :boards, except: [:new, :edit, :index]
     get 'boards/:id/pins', to: "boards#index_pins"
+    get 'currentuser/boards', to: "boards#current_user_list" 
     resources :boards_pins, only: [:create, :destroy, :index]
     resource :session, only: [:create, :destroy]
   end

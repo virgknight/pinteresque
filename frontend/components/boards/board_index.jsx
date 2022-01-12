@@ -15,10 +15,10 @@ class BoardIndex extends React.Component {
         if (!user) return null;
 
         // pull out user's boards
-        const displayedBoards = Object.values(boards).reverse();
+        const displayedBoards = Object.values(boards).filter((board) => board.owner_id === user.id).reverse();
 
         // boolean indicating whether the current user is viewing their own boards
-        // used to decide whether to display edit button on hover
+        // used to decide whether to display edit shortcut button on hover
         const isCurrentUser = (currentUser.id === user.id);
 
         return (

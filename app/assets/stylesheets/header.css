@@ -7,7 +7,7 @@
     position: sticky; 
     top: 0;
     box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.3);
-    z-index: 1;
+    z-index: 20;
 }
 
 .header-elements {
@@ -69,6 +69,12 @@ button.styled-button.red {
 
 button.styled-button.red a {
     color: white;
+}
+
+button.styled-button.black {
+    background-color: black;
+    color: white;
+    padding: 8px;
 }
 
 /* LinkedIn / GitHub links */

@@ -1,6 +1,6 @@
 class Api::BoardsController < ApplicationController
     def show
-        @board = Board.find(params[:id])
+        @board = Board.includes(:pins).find(params[:id])
     end
 
     def create
@@ -13,7 +13,7 @@ class Api::BoardsController < ApplicationController
     end
 
     def update
-        @board = Board.find(params[:id])
+        @board = Board.includes(:pins).find(params[:id])
         if @board.update(board_params)
             render :show
         else
@@ -33,6 +33,10 @@ class Api::BoardsController < ApplicationController
 
     def index_pins
         @board = Board.includes(:pins).find(params[:id])
+    end
+
+    def current_user_list
+        @boards = Board.includes(:pins).where(owner_id: current_user.id)
     end
 
     protected

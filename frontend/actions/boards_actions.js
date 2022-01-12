@@ -1,6 +1,7 @@
 import * as ApiBoardsUtil from "../util/board_util";
 
 export const RECEIVE_BOARD = "RECEIVE_BOARD";
+export const RECEIVE_CURRENT_USER_BOARDS = "RECEIVE_CURRENT_USER_BOARDS";
 export const REMOVE_BOARD = "REMOVE_BOARD";
 export const RECEIVE_BOARD_ERRORS = "RECEIVE_BOARD_ERRORS";
 export const CLEAR_BOARD_ERRORS = "CLEAR_BOARD_ERRORS";
@@ -10,6 +11,11 @@ const receiveBoard = board => ({
     type: RECEIVE_BOARD,
     board
 });
+
+const receiveCurrentUserBoards = boards => ({
+    type: RECEIVE_CURRENT_USER_BOARDS,
+    boards
+})
 
 const removeBoard = boardId => ({
     type: REMOVE_BOARD,
@@ -28,6 +34,10 @@ export const clearBoardErrors = () => ({
 export const requestBoard = boardId => dispatch => (
     ApiBoardsUtil.fetchBoard(boardId).then((board) => dispatch(receiveBoard(board)))
 );
+
+export const requestCurrentUserBoards = () => dispatch => (
+    ApiBoardsUtil.getCurrentUserBoards().then((boards) => dispatch(receiveCurrentUserBoards(boards)))
+)
 
 export const createBoard = board => dispatch => (
     ApiBoardsUtil.createBoard(board).then(
