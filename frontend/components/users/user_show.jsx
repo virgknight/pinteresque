@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 class UserShow extends React.Component {
     componentDidMount () {
         this.props.requestOtherUser(this.props.match.params.userId)
+            .then(({ user }) => this.props.requestUserFollows(user.id));
     }
 
     render () {
@@ -11,9 +12,12 @@ class UserShow extends React.Component {
 
         if (!user) return null;
         
-        const actionButton = (user.id === currentUser.id) ? 
-            (<button className="styled-button" onClick={() => this.props.history.push("/settings/edit-profile") }>Edit Profile</button>) :
-            (<button className="styled-button red">Follow</button>);
+        let actionButton;
+        if (user.id === currentUser.id) {
+            actionButton = (<button className="styled-button" onClick={() => this.props.history.push("/settings/edit-profile")}>Edit Profile</button>);
+        }
+        //     (<button className="styled-button red">Follow</button>);
+        //     (<button className="styled-button black">Following</button>);
 
         const pronounText = user.pronouns ? (<h5>{user.pronouns}</h5>) : null;
         const shortBio = user.short_bio ? ` · ${user.short_bio}` : "";
