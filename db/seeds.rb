@@ -126,6 +126,53 @@ pin25 = Pin.create!(owner_id: demo_user.id, title: "hi friend");
 photo25 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/alpaca.jpeg");
 pin25.photo.attach(io: photo25, filename: "alpaca.jpeg");
 
+pin26 = Pin.create!(owner_id: user1.id, title: "Why You Need these Ocean Safe Skincare Products", alt_text: "what's up with the title?");
+photo26 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/Why+You+Need+these+Ocean-Safe+Skincare+Products.jpeg");
+pin26.photo.attach(io: photo26, filename: "ocean-skincare.jpeg");
+
+pin27 = Pin.create!(owner_id: user1.id, title: "20 Amazing Open Bathroom Design Inspiration");
+photo27 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/20+Amazing+Open+Bathroom+Design+Inspiration+-+The+Architects+Diary.png");
+pin27.photo.attach(io: photo27, filename: "open-bathroom.jpeg");
+
+pin28 = Pin.create!(owner_id: user2.id, title: "vacation");
+photo28 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/hammock.jpeg");
+pin28.photo.attach(io: photo28, filename: "hammock.jpeg");
+
+pin29 = Pin.create!(owner_id: demo_user.id, title: "DREAMSCAPES");
+photo29 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/dreamy-beach.jpeg");
+pin29.photo.attach(io: photo29, filename: "dreamy-beach.jpeg");
+
+pin30 = Pin.create!(owner_id: demo_user.id, title: "city livin", alt_text: "find skating rinks near you");
+photo30 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/ice-skating.jpeg");
+pin30.photo.attach(io: photo30, filename: "ice-skating.jpeg");
+
+pin31 = Pin.create!(owner_id: user1.id, title: "handsome boy");
+photo31 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/happy-dog.jpeg");
+pin31.photo.attach(io: photo31, filename: "happy-dog.jpeg");
+
+pin32 = Pin.create!(owner_id: demo_user.id, title: "Picnic Spread");
+photo32 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/picnic-spread.jpeg");
+pin32.photo.attach(io: photo32, filename: "picnic-spread.jpeg");
+
+pin33 = Pin.create!(owner_id: user2.id, title: "delicious", alt_text: "but too pretty to eat");
+photo33 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/marie-cookies.jpeg");
+pin33.photo.attach(io: photo33, filename: "marie-cookies.jpeg");
+
+pin34 = Pin.create!(owner_id: demo_user.id, title: "I M P E R I U M");
+photo34 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/statues.jpeg");
+pin34.photo.attach(io: photo34, filename: "statues.jpeg");
+
+pin35 = Pin.create!(owner_id: user1.id, title: "I Photographed the Ocean", alt_text: "and it turned out great");
+photo35 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/seaside-picnic.jpeg");
+pin35.photo.attach(io: photo35, filename: "seaside-picnic.jpeg");
+
+pin36 = Pin.create!(owner_id: user2.id, title: "leap of faith");
+photo36 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/water.jpeg");
+pin36.photo.attach(io: photo36, filename: "water.jpeg");
+
+pin37 = Pin.create!(owner_id: demo_user.id, title: "VSOP", alt_text: "valencia orange");
+photo37 = URI.open("https://pinteresque-seeds.s3.us-west-1.amazonaws.com/VSOP.jpeg");
+pin37.photo.attach(io: photo37, filename: "VSOP.jpeg");
 
 ### Boards
 board1 = Board.create!(owner_id: demo_user.id, name: "my favorite animals", description: "these animals are just the best");
