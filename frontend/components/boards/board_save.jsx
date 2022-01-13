@@ -25,7 +25,7 @@ class BoardSave extends React.Component {
         // Get alphabetical array of current users boards, setting selection to the first
         this.props.requestCurrentUserBoards().then(({ boards }) => {
             this.currUserBoards = Object.values(boards).sort((a, b) => (a.name > b.name) ? 1 : -1);
-            this.setState({ board_id: this.currUserBoards[0].id })
+            if (this.currUserBoards.length > 0) this.setState({ board_id: this.currUserBoards[0].id })
         }
         );
     }

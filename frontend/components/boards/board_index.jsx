@@ -32,7 +32,9 @@ class BoardIndex extends React.Component {
 
         return (
             <div>
-                <main className="pin-index">
+                { 
+                displayedBoards.length > 0 ? 
+                (<main className="pin-index">
                     {[0, 1, 2, 3, 4].map((i) => (
                         <div key={`col-${i}`} className={`gridcol col${i}`}>
                             {displayedBoards
@@ -43,7 +45,9 @@ class BoardIndex extends React.Component {
                                 ))}
                         </div>
                     ))}
-                </main>
+                </main>) :
+                (<h1 className="header-text" style={{ textAlign: "center", fontWeight: "lighter" }}>No boards yet</h1>)
+                }
             </div>
         );
     }
