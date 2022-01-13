@@ -1,5 +1,6 @@
 import { RECEIVE_BOARD, REMOVE_BOARD, RECEIVE_CURRENT_USER_BOARDS } from "../actions/boards_actions";
 import { RECEIVE_USER_BOARDS } from "../actions/users_actions";
+import { RECEIVE_FOLLOWING } from "../actions/follows_actions";
 
 const defaultState = {};
 
@@ -17,6 +18,8 @@ const BoardsReducer = (state = defaultState, action) => {
         case REMOVE_BOARD:
             delete newState[action.boardId];
             return newState;
+        case RECEIVE_FOLLOWING:
+            return Object.assign(action.payload.boards, newState); 
         default:
             return state;
     }

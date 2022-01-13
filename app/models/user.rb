@@ -39,6 +39,16 @@ class User < ApplicationRecord
     foreign_key: :follower_id,
     class_name: :Follow
 
+    has_many :followed_boards,
+    through: :follows, 
+    source: :followable,
+    source_type: "Board"
+
+    has_many :followed_users,
+    through: :follows,
+    source: :followable,
+    source_type: "User"
+
     has_many :followers, as: :followable
 
     has_one_attached :avatar

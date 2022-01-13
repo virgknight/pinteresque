@@ -1,5 +1,6 @@
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 import { RECEIVE_OTHER_USER, REMOVE_USER } from "../actions/users_actions";
+import { RECEIVE_FOLLOWING } from "../actions/follows_actions";
 
 const defaultState = { };
 
@@ -19,6 +20,8 @@ const usersReducer = (state = defaultState, action) => {
         case REMOVE_USER:
             delete newState[action.userId];
             return newState;
+        case RECEIVE_FOLLOWING:
+            return Object.assign(action.payload.users, newState); 
         default:
             return state;
     }

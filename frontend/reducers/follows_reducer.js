@@ -1,4 +1,4 @@
-import { RECEIVE_FOLLOW, RECEIVE_MANY_FOLLOWS, REMOVE_FOLLOW } from "../actions/follows_actions";
+import { RECEIVE_FOLLOW, RECEIVE_MANY_FOLLOWS, REMOVE_FOLLOW, RECEIVE_FOLLOWING } from "../actions/follows_actions";
 
 const defaultState = {};
 
@@ -14,6 +14,8 @@ const FollowsReducer = (state = defaultState, action) => {
         case REMOVE_FOLLOW:
             delete newState[action.followId];
             return newState;
+        case RECEIVE_FOLLOWING:
+            return Object.assign(newState, action.payload.follows);
         default:
             return state;
     }
