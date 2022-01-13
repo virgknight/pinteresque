@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import FollowerIndexContainer from "../follows/follower_index_container";
 
 class UserShow extends React.Component {
     constructor(props) {
@@ -57,8 +58,8 @@ class UserShow extends React.Component {
 
         const pronounText = user.pronouns ? (<h5>{user.pronouns}</h5>) : null;
         const shortBio = user.short_bio ? ` · ${user.short_bio}` : "";
-        const followerCount = this.filterFollows().length;
-        const followOrFollows = followerCount === 1 ? "follower" : "followers";
+        // const followerCount = this.filterFollows().length;
+        // const followOrFollows = followerCount === 1 ? "follower" : "followers";
         const followingCount = this.filterFollowing().length;
 
         return (
@@ -70,7 +71,12 @@ class UserShow extends React.Component {
                     <br />
                     <h5>@{user.username}{shortBio}</h5>
                     {/* Followers/Following counts */}
-                    <h6>{followerCount} {followOrFollows} &#183; {followingCount} following</h6>
+                    <div className="follower-count">
+                        <FollowerIndexContainer user={user}/>
+                        &#183;
+                        <h6>{followingCount} following</h6>
+                    </div>
+                    {/* <h6>{followerCount} {followOrFollows} &#183; {followingCount} following</h6> */}
                     {actionButton}
                 </header>
                 <section id="created-saved-bar">

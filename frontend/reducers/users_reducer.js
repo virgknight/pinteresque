@@ -21,9 +21,17 @@ const usersReducer = (state = defaultState, action) => {
             delete newState[action.userId];
             return newState;
         case RECEIVE_FOLLOWING:
-            return Object.assign(action.payload.users, newState); 
+            if (action.payload.users) {
+                return Object.assign(action.payload.users, newState); 
+            } else {
+                return newState;
+            }
         case RECEIVE_MANY_FOLLOWS:
-            return Object.assign(action.payload.users, newState); 
+            if (action.payload.users) {
+                return Object.assign(action.payload.users, newState);
+            } else {
+                return newState;
+            }
         default:
             return state;
     }

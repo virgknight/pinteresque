@@ -14,12 +14,16 @@ const BoardsReducer = (state = defaultState, action) => {
         case RECEIVE_USER_BOARDS:
             return Object.assign(newState, action.payload.boards);
         case RECEIVE_CURRENT_USER_BOARDS:
-            return Object.assign(action.boards, newState);
+            return Object.assign(newState, action.boards);
         case REMOVE_BOARD:
             delete newState[action.boardId];
             return newState;
         case RECEIVE_FOLLOWING:
-            return Object.assign(action.payload.boards, newState); 
+            if (action.payload.boards) {
+                return Object.assign(action.payload.boards, newState); 
+            } else {
+                return newState;
+            }
         default:
             return state;
     }

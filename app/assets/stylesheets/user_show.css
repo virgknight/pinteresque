@@ -202,3 +202,46 @@ footer button.styled-button {
 #user-create-options a:hover {
     background-color: #efefef;
 }
+
+/* Follower count and index */
+.follower-count, .follow-modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.follower-count {
+    cursor: pointer;
+}
+
+.follow-modal-container {
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+}
+
+.follow-modal {
+    width: 552px;
+    position: relative;
+}
+
+.follow-list {
+    margin: 10px;
+}
+
+.follow-index-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 532px;
+}
+
+.follow-index-item .user-info {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+}

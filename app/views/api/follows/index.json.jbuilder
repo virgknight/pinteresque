@@ -9,7 +9,7 @@ json.users do
     @follows.each do |follow|
         user = follow.follower
         json.set! user.id do
-            json.extract! user, :id, :display_name
+            json.extract! user, :id, :username, :short_bio, :pronouns, :display_name
             json.photoUrl url_for(user.avatar) if user.avatar.attached?
         end
     end

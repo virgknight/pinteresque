@@ -2,11 +2,20 @@ import React from "react";
 import BoardIndexItem from "./board_index_item";
 
 class BoardIndex extends React.Component {
+    constructor(props) {
+        super(props);
+        this.visitBoard = this.visitBoard.bind(this);
+    }
+
     componentDidMount() {
         this.props.requestOtherUser(this.props.match.params.userId)
             .then(({user}) => {
                 this.props.requestUserBoards(user.id)
             });
+    }
+
+    visitBoard (boardId) {
+        return () => this.props.history.push(`/boards/${boardId}`);
     }
 
     render () {
@@ -29,7 +38,7 @@ class BoardIndex extends React.Component {
                             {displayedBoards
                                 .filter((board, j) => (j % 5 === i))
                                 .map((board, j) => (
-                                    <BoardIndexItem key={`board-${j}`} board={board} 
+                                    <BoardIndexItem key={`board-${j}`} board={board} visitBoard={this.visitBoard}
                                         boards_pins={boards_pins} pins={pins} isCurrentUser={isCurrentUser}/>
                                 ))}
                         </div>

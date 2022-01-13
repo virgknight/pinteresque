@@ -6,22 +6,28 @@ import { Link } from "react-router-dom";
 class BoardShow extends React.Component {
     constructor(props) {
         super(props);
-        this.boardPins = [];
+        this.state = { boardPins: [] }
+        // this.boardPins = [];
     }
 
     componentDidMount() {
         this.props.requestBoard(this.props.match.params.boardId)
-            .then(({board}) => this.props.requestOtherUser(board.owner_id));
-        this.props.requestBoardPins(this.props.match.params.boardId)
-            .then(({ pins }) => this.boardPins = Object.values(pins).reverse())
+            .then(({board}) => {
+                this.props.requestOtherUser(board.owner_id).then(() => {
+                    this.props.requestBoardPins(this.props.match.params.boardId)
+                        .then(({ pins }) => this.setState({boardPins: Object.values(pins).reverse()}))
+                        // this.boardPins = Object.values(pins).reverse()
+                });
+            });
     }
 
     render () {
-        const { board, getUserIcon, currentUser } = this.props;
+        const { board, getUserIcon, currentUser, users } = this.props;
 
         if (!board) return null;
 
-        const boardOwner = this.props.users[board.owner_id];
+        const boardOwner = users[board.owner_id];
+        if (!boardOwner) return null;
         
         return (<main>
             <div className="show-header">
@@ -29,14 +35,14 @@ class BoardShow extends React.Component {
                     <h1>{board.name}</h1>
                     <BoardShowOptions currentUser={currentUser} board={board}/>
                 </div>
-                <Link to={`/users/${boardOwner.id}/_saved`}>{getUserIcon(boardOwner)}</Link>
+                <Link to={`/users/${board.owner_id}/_saved`}>{getUserIcon(boardOwner)}</Link>
                 <h6>{boardOwner.display_name}</h6>
                 {board.description ? <h5 className="board-desc">{board.description}</h5> : null}
                 {/* VKNOTE: add follower count in here when possible */}
-                <h6>X followers</h6>
+                {/* <h6>X followers</h6> */}
                 <br />
             </div>
-            <DiscoverGridContainer pins={this.boardPins} infinite={false} />
+            <DiscoverGridContainer pins={this.state.boardPins} infinite={false} />
         </main>);
     }
 }

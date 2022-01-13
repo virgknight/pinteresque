@@ -2,11 +2,12 @@ import { connect } from "react-redux";
 import { getUserIcon } from "../../util/user_util";
 import { requestUserFollows, followUser, unfollow } from "../../actions/follows_actions";
 import { notify } from "../../actions/notification_actions";
+import { withRouter } from "react-router-dom";
 import FollowerIndex from "./follower_index";
 
-const mSTP = ({ session, entities: { users, follows } }, ownProps) => ({
-    followedEntity: ownProps.followedEntity, // passed either the user or board that has follows
+const mSTP = ({ session, entities: { users, follows } }) => ({
     currentUser: users[session.currentUserId],
+    users,
     follows
 });
 
@@ -18,4 +19,4 @@ const mDTP = dispatch => ({
     notify: (action) => dispatch(notify(action))
 });
 
-export default connect(mSTP, mDTP)(FollowerIndex);
+export default withRouter(connect(mSTP, mDTP)(FollowerIndex));

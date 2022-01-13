@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import EditIcon from '@mui/icons-material/Edit';
 
-const BoardIndexItem = ({ isCurrentUser, board, boards_pins, pins }) => {
+const BoardIndexItem = ({ isCurrentUser, board, boards_pins, pins, visitBoard }) => {
 
     // get pins associated with board
     const pinAssignments = Object.values(boards_pins).filter((assignment) => assignment.board_id === board.id);
@@ -15,9 +15,7 @@ const BoardIndexItem = ({ isCurrentUser, board, boards_pins, pins }) => {
         null;
 
     return (
-        <div className="board-index-item">
-            <Link to={`/boards/${board.id}`}>
-
+        <div className="board-index-item" onClick={visitBoard(board.id)}>
                 <div className="board-preview-container">
                     {displayPins[0] ? <img className="left" src={displayPins[0].photoUrl} /> : <div className="left" />}
                     <div className="board-preview-column">
@@ -28,7 +26,6 @@ const BoardIndexItem = ({ isCurrentUser, board, boards_pins, pins }) => {
                 </div>
                 <h4>{board.name}</h4>
                 <p>{pinAssignments.length} pins</p>
-            </Link>
         </div>
     );
 }

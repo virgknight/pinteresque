@@ -24,7 +24,9 @@ class BoardShowOptions extends React.Component {
 
         const editOption = (currentUser.id === board.owner_id) ?
             (<li onClick={this.hide}><Link to={`/boards/${board.id}/edit`}>Edit Board</Link></li>) :
-            (<li onClick={this.hide}>Edit Board</li>);
+            // VKNOTE: add follow button here when possible
+            // Will need to include logic to check whether current user follows board's user already
+            (<li onClick={this.hide}>Follow</li>);
 
         return (
             <div>

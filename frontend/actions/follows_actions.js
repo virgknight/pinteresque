@@ -10,9 +10,9 @@ const receiveFollow = follow => ({
     follow
 });
 
-const receiveManyFollows = follows => ({
+const receiveManyFollows = payload => ({
     type: RECEIVE_MANY_FOLLOWS,
-    follows
+    payload
 });
 
 const receiveFollowing = payload => ({
