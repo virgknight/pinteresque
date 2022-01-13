@@ -10,7 +10,7 @@ class Api::FollowsController < ApplicationController
     end
 
     def index
-        @follows = Follow.where(followable_id: @followable.id, followable_type: @followable.class.to_s)
+        @follows = Follow.includes(:follower).where(followable_id: @followable.id, followable_type: @followable.class.to_s)
     end
 
     def create

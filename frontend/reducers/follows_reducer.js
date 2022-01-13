@@ -8,7 +8,7 @@ const FollowsReducer = (state = defaultState, action) => {
 
     switch (action.type) {
         case RECEIVE_MANY_FOLLOWS:
-            return Object.assign(newState, action.follows);
+            return Object.assign(newState, action.payload.follows);
         case RECEIVE_FOLLOW:
             return Object.assign(newState, {[action.follow.id]: action.follow});
         case REMOVE_FOLLOW:

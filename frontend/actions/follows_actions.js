@@ -26,7 +26,7 @@ const removeFollow = followId => ({
 });
 
 export const requestUserFollows = userId => dispatch => (
-    ApiFollowUtil.fetchUserFollows(userId).then((follows) => dispatch(receiveManyFollows(follows)))
+    ApiFollowUtil.fetchUserFollows(userId).then((payload) => dispatch(receiveManyFollows(payload)))
 );
 
 export const requestUserFollowing = userId => dispatch => (
@@ -34,7 +34,7 @@ export const requestUserFollowing = userId => dispatch => (
 );
 
 export const requestBoardFollows = boardId => dispatch => (
-    ApiFollowUtil.fetchBoardFollows(boardId).then((follows) => dispatch(receiveManyFollows(follows)))
+    ApiFollowUtil.fetchBoardFollows(boardId).then((payload) => dispatch(receiveManyFollows(payload)))
 );
 
 export const followUser = userId => dispatch => (
