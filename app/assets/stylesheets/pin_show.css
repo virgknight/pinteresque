@@ -178,7 +178,7 @@ button.back-button:hover {
 }
 
 .expander {
-    min-width: 140px;
+    width: 140px;
 }
 
 .board-save h2 {

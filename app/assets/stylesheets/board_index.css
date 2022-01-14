@@ -1,6 +1,7 @@
 /* Text for index items */
 .board-index-item {
     text-align: left;
+    cursor: pointer;
 }
 
 .board-index-item:hover {
