@@ -1,24 +1,16 @@
-# README
+# Pinteresque
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview
+Pinteresque is a full-stack clone of the popular "visual discovery engine" website Pinterest. Pinteresque users are able to create, edit, and delete Pins and boards, follow one another, and find exciting new visual inspiration via an infinitely scrolling home feed.
 
-Things you may want to cover:
+[Sign up for Pinteresque (or take a look around as a demo user) here!](https://pinteresque.herokuapp.com/#/)
 
-* Ruby version
+## Technologies used
+* JavaScript
+* Ruby on Rails
+* React
+* Redux
+* HTML / CSS
+* Amazon Web Services S3
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Key features
