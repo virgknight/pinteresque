@@ -17,7 +17,7 @@ Pinteresque is a full-stack clone of the popular "visual discovery engine" websi
 ## Key features
 
 #### User authentication
-New users are created and given a hashed password digest using the BCrypt gem. New users also many only join Pinteresque if they are 13 years or older.
+New users are created and given a hashed password digest using the BCrypt gem. New users may only join Pinteresque if they are 13 years or older.
 <br>
 <img src="/app/assets/images/readme/signup.png" width="300" height="327" />
 
