@@ -22,11 +22,11 @@ class PinShow extends React.Component {
     handleCopy (e) {
         e.preventDefault();
         navigator.clipboard.writeText(window.location.href);
-        this.props.notify();
+        this.props.notify("copied");
     }
 
     render () {
-        const { pin, currentUser, getUserIcon } = this.props;
+        const { pin, currentUser, getUserIcon, notify } = this.props;
 
         if (!pin) return null;
         const pinOwner = this.props.users[pin.owner_id];
@@ -44,7 +44,7 @@ class PinShow extends React.Component {
                             <div className="pin-show-nav">
                                 <div className="ps-nav-icons">
                                     <PinShowMore pin={pin} currentUser={currentUser} />
-                                    <IosShareIcon fontWeight="900" />
+                                    {/* <IosShareIcon fontWeight="900" /> */}
                                     <div onClick={this.handleCopy}><LinkIcon fontWeight="900" /></div>
                                 </div>
                                 <BoardSaveContainer pinId={pin.id} indexView={false} />
@@ -55,7 +55,7 @@ class PinShow extends React.Component {
                             <br />
                             {pinOwner ? <PinOwnerInfo getUserIcon={getUserIcon} owner={pinOwner} /> : null}
                             <br />
-                            <PinShowComment currentUser={currentUser} getUserIcon={getUserIcon}/>
+                            <PinShowComment currentUser={currentUser} getUserIcon={getUserIcon} notify={notify}/>
                         </div>
                     </section>
                 </div>

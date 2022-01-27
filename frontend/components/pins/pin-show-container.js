@@ -15,7 +15,7 @@ const mDTP = dispatch => ({
     requestPin: (pinId) => dispatch(requestPin(pinId)),
     getUserIcon: (user) => getUserIcon(user),
     requestOtherUser: (userId) => dispatch(requestOtherUser(userId)),
-    notify: () => dispatch(notify("copied"))
+    notify: (action) => dispatch(notify(action))
 });
 
 export default connect(mSTP, mDTP)(PinShow);

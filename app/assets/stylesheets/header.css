@@ -5,6 +5,7 @@
     background-color: white;
     padding: 10px 0 10px 0;
     position: sticky; 
+    width: 100vw;
     top: 0;
     box-shadow: none;
     z-index: 20;
@@ -202,4 +203,18 @@ input.search-input:focus {
 .profile-summary-names p {
     font-weight: lighter;
     color: #696969;
+}
+
+/* Accounting for smaller screens */
+
+@media only screen and (max-width: 1310px) {
+  .header-text.today {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1060px) {
+  .header-text.white {
+    display: none;
+  }
 }

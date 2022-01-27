@@ -5,11 +5,12 @@ import { requestOtherUser } from "../../actions/users_actions";
 // import { notify } from "../../actions/notification_actions";
 import BoardShow from "./board_show";
 
-const mSTP = ({ session, entities: { users, boards, pins } }, ownProps) => ({
+const mSTP = ({ session, entities: { users, boards, pins, boards_pins } }, ownProps) => ({
     board: boards[ownProps.match.params.boardId],
     currentUser: users[session.currentUserId],
     users,
-    pins
+    pins,
+    boards_pins
 });
 
 const mDTP = dispatch => ({

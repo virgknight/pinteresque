@@ -12,6 +12,7 @@ class EditProfileForm extends React.Component {
             pronouns: currentUser.pronouns || "Add your pronouns",
             username: currentUser.username,
             photoFile: null,
+            photoUrl: "",
             madeUpdate: false
         };
         this.originalValues = currentUser;
@@ -37,7 +38,18 @@ class EditProfileForm extends React.Component {
     }
 
     handleFile(e) {
-        this.setState({ photoFile: e.currentTarget.files[0] })
+        const reader = new FileReader();
+        const file = e.currentTarget.files[0];
+        reader.onloadend = () => {
+            this.setState({ photoFile: file, photoUrl: reader.result, madeUpdate: true });
+            this.toggleModal();
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            this.setState({ photoUrl: "", photoFile: null });
+        }
     }
 
     handleSubmit(e) {
@@ -78,8 +90,10 @@ class EditProfileForm extends React.Component {
 
                 <label>Photo</label>
                 <section className="edit-flex">
-                    {this.props.getUserIcon(currentUser)}
-                    <button className="styled-button" onClick={this.toggleModal}>Change</button>
+                    {this.state.photoUrl ? 
+                        <img src={this.state.photoUrl} height="50" width="50" style={{ borderRadius: "50%", objectFit: "cover" }}/>
+                        : this.props.getUserIcon(currentUser)}
+                    <button className="styled-button" onClick={(e) => {e.preventDefault(); this.toggleModal();}}>Change</button>
                 </section>
                 <br />
 

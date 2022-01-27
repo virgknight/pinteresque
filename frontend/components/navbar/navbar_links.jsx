@@ -47,14 +47,14 @@ class NavBarLinks extends React.Component {
                     <input className="search-input" type="text" placeholder="Search"/>
                 </div>
                 <div className="nav-icon">
-                    <Link to="https://github.com/virgknight/pinteresque">
+                    <a href="https://github.com/virgknight/pinteresque" target="_blank">
                         <GitHubIcon sx={{ fontSize: 30, color: "gray" }} />
-                    </Link>
+                    </a>
                 </div>
                 <div className="nav-icon">
-                    <Link to="https://www.linkedin.com/in/virginia-knight-2a75aaa6/">
+                    <a href="https://www.linkedin.com/in/virginia-knight-2a75aaa6/" target="_blank">
                         <LinkedInIcon sx={{ fontSize: 38, color: "gray" }}/>
-                    </Link>
+                    </a>
                 </div>
                 <div className="profile-icon nav-icon">
                     <Link to={`/users/${currentUser.id}/_saved`}>
@@ -71,8 +71,8 @@ class NavBarLinks extends React.Component {
         const loggedOutLinks = (
             <nav id="header-nav" className="header-elements">
                 <div className="professional-links">
-                    <a href="https://github.com/virgknight/pinteresque">GitHub</a>
-                    <a href="https://www.linkedin.com/in/virginia-knight-2a75aaa6/">LinkedIn</a>
+                    <a href="https://github.com/virgknight/pinteresque" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/virginia-knight-2a75aaa6/" target="_blank">LinkedIn</a>
                 </div>
                 <button className="red styled-button"><Link to="/login">Log in</Link></button>
                 <button className="styled-button"><Link to="/signup">Sign up</Link></button>
@@ -84,7 +84,7 @@ class NavBarLinks extends React.Component {
                 <img src={window.round_logo} width="50" height="50" />
                 {currentUser ? 
                     <><h1 className="header-text white"><Link to="/">Home</Link></h1> 
-                    <h1 className="header-text">Today</h1></>
+                    <h1 className="header-text today">Today</h1></>
                     : 
                     <h1 className="header-text red">Pinteresque</h1>}
             </div>

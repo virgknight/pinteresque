@@ -9,6 +9,10 @@
 
     <%= javascript_include_tag 'application' %>
 
+    <meta property="og:title" content="Pinteresque">
+    <meta property="og:image" content="<%= image_url('homepage.png')%>" >
+    <meta property="og:description" content="A full stack clone of Pinterest">
+
     <script>
       window.round_logo ="<%= image_url("pinterest_logo.png") %>"
     </script>

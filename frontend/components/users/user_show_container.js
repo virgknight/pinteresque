@@ -3,6 +3,7 @@ import { requestOtherUser } from "../../actions/users_actions";
 import { getUserIconLarge } from "../../util/user_util";
 import { requestUserFollows, requestUserFollowing, followUser, unfollow } from "../../actions/follows_actions";
 import { notify } from "../../actions/notification_actions";
+import { withRouter } from "react-router-dom";
 import UserShow from "./user_show";
 
 const mSTP = ({ session, entities: { users, follows } }, ownProps) => ({
@@ -21,4 +22,4 @@ const mDTP = dispatch => ({
     notify: (action) => dispatch(notify(action))
 });
 
-export default connect(mSTP, mDTP)(UserShow);
+export default withRouter(connect(mSTP, mDTP)(UserShow));

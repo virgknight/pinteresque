@@ -2,6 +2,11 @@ import React from "react";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 class PinShowComment extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleComment = this.handleComment.bind(this);
+    }
+
     revealCommentBar (e) {
         e.preventDefault();
 
@@ -11,6 +16,10 @@ class PinShowComment extends React.Component {
 
         const commentBar = document.getElementById("pin-show-comment-bar");
         commentBar.classList.toggle("hidden");
+    }
+
+    handleComment (e) {
+        if (e.key === 'Enter') this.props.notify("comment");
     }
 
     render () {
@@ -26,7 +35,7 @@ class PinShowComment extends React.Component {
                 <p>Ask a question, share feedback or give a fist bump</p>
                 <div className="ps-comment-input-container">
                     {this.props.getUserIcon(this.props.currentUser)}
-                    <input className="comment-input" type="text" placeholder="Add a comment" />
+                    <input className="comment-input" type="text" placeholder="Add a comment" onKeyDown={this.handleComment} />
                 </div>
             </div>
         </div>);

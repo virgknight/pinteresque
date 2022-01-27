@@ -91,6 +91,7 @@ class Splash extends React.Component {
             <div className="splash-theme-buttons">
                 {circleButtons}
             </div>
+
             {selectedIdea.images}
         </main>);
     }

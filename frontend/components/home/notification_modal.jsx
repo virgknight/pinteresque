@@ -36,6 +36,9 @@ const Notification = ({notification}) => {
         case "user followed":
             message = "You are now following this user!"; // real pinterest: "Following! Their created Pins will show up in your home feed!"
             break;
+        case "comment":
+            message = "You must update to Pinteresque Gold to leave comments";
+            break;
         default:
             return null;
     }

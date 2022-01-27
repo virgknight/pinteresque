@@ -64,9 +64,8 @@ class PinEditForm extends React.Component {
         this.props.deletePin(this.state.id)
             .then(() => {
                 this.props.notify("pin deleted");
-                this.props.history.go(-2);
+                this.props.history.push(`/users/${this.props.currentUser.id}/_created`);
             });
-            // reroutes user to last visited page before pin show
     }
 
     render () {

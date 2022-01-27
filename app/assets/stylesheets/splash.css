@@ -49,7 +49,7 @@
 div.splash-theme-buttons {
     position: absolute;
     z-index: 1;
-    top: 30%;
+    top: 33%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
