@@ -5,10 +5,12 @@ import { notify } from "../../actions/notification_actions";
 import { withRouter } from "react-router-dom";
 import FollowerIndex from "./follower_index";
 
-const mSTP = ({ session, entities: { users, follows } }) => ({
+const mSTP = ({ session, entities: { users, follows } }, ownProps) => ({
     currentUser: users[session.currentUserId],
     users,
-    follows
+    follows,
+    user: ownProps.user,
+    listType: ownProps.listType
 });
 
 const mDTP = dispatch => ({
