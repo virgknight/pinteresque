@@ -17,13 +17,9 @@ class UserShow extends React.Component {
             });
     }
 
-    filterFollowing() {
-        const { user } = this.props;
-        return Object.values(this.props.follows).filter((follow) => follow.follower_id === user.id);
-    }
-
     filterFollows () {
         const {user} = this.props;
+        if (!user) return [];
         return Object.values(this.props.follows).filter((follow) => follow.followable_id === user.id && follow.followable_type === "User");
     }
 
