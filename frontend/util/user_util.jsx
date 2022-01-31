@@ -11,6 +11,7 @@ export const getUserIconMini = (user) => {
 };
 
 export const getUserIcon = (user) => {
+    if (!user) return null;
     return user.photoUrl ? 
         (<img src={user.photoUrl} height="50" width="50" style={{ borderRadius: "50%", objectFit: "cover" }}/>) :
             (<svg height="55" width="55">
