@@ -25,6 +25,7 @@ class FollowerIndex extends React.Component {
     }
 
     filterFollows(user) {
+        if (!user) return [];
         return Object.values(this.props.follows).filter((follow) => follow.followable_id === user.id && follow.followable_type === "User");
     }
 
