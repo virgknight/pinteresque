@@ -94,11 +94,14 @@ class DiscoverGrid extends React.Component {
     render () {
         if (this.props.pins.length === 0) return (<h1 className="header-text" style={{textAlign: "center", fontWeight: "lighter"}}>There aren't any Pins yet</h1>);
 
+        // Update so that all pins are shown for non-infinite displays. Otherwise deleted pins will not get removed dynamically
+        let allPins = this.props.infinite ? this.state.displayedPins : this.props.pins ;
+
         return (
             <main className="pin-index">
                 {[0,1,2,3,4].map((i) => (
                     <div key={`col-${i}`} className={`gridcol col${i}`}>
-                        {this.state.displayedPins
+                        {allPins
                             .filter((pin, j) => (j % 5 === i))
                             .map((pin, j) => (
                                 <GridIndexItem key={`img-${j}`} pin={pin} history={this.props.history}/>
