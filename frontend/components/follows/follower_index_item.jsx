@@ -1,6 +1,8 @@
 import React from "react";
 
 const FollowerIndexItem = ({ follower, getUserIcon, handleFollow, handleUnfollow, userFollow, viewUser }) => {
+    if (!follower) return null;
+    
     let actionButton;
     if (userFollow(follower).length > 0) {
         actionButton = (<button className="styled-button" onClick={handleUnfollow(follower)}>Unfollow</button>);
