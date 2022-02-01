@@ -15,6 +15,6 @@ class Api::SessionsController < ApplicationController
 
     def destroy
         logout! if logged_in?
-        render json: { } #VKNOTE: no data really needs to be sent to render logged out page... right?
+        render json: { }
     end
 end

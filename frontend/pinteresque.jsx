@@ -18,10 +18,5 @@ document.addEventListener("DOMContentLoaded", () => {
         store = configureStore();
     }
 
-    // VKNOTE: DEVELOPMENT CODE
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
-    // END DEVELOPMENT CODE
-
     ReactDOM.render(<Root store={store} />, root)
 });
