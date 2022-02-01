@@ -6,6 +6,14 @@ Pinteresque is a full-stack clone of the popular "visual discovery engine" websi
 
 [Sign up for Pinteresque (or take a look around as a demo user) here!](https://pinteresque.herokuapp.com/#/)
 
+## Technologies used
+* JavaScript
+* Ruby on Rails
+* React
+* Redux
+* HTML / CSS
+* Amazon Web Services S3
+
 ## Key features
 
 #### User authentication
@@ -41,14 +49,6 @@ Saving a Pin to a board is easily done with a handy dropdown menu that appears i
 
 #### Follows
 Users have the option of following other users or boards. A user's follower/following count is displayed at the top of their profile, and one can currently view a list of all of a user's followers. In a future patch, one will also be able to view a list of all of the boards and users that a given user is following!
-
-## Technologies used
-* JavaScript
-* Ruby on Rails
-* React
-* Redux
-* HTML / CSS
-* Amazon Web Services S3
 
 ## Future directions
 In the future, Pinteresque will have...
